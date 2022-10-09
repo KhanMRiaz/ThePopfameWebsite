@@ -47,7 +47,7 @@ const Home = () => {
       <Slide style={{ ...baseStyle }}>
         <div style={{ height: 0.9 * innerHeight, width: 0.9 * innerWidth, flexDirection: 'row', display: 'flex' }}>
           <div style={{ flexDirection: 'column', alignItems: 'flex-start', display: 'flex', width: 0.45 * innerWidth, height: 0.9 * innerHeight }}>
-            <div style={{ marginTop: 0.1 * innerHeight, fontWeight: '500', textAlign: 'left', display: 'flex' }}>Quality Home<br /> Services, On<br /> Demand Plumbing</div>
+            <div style={{ marginTop: 0.1 * innerHeight, fontWeight: '500',  fontSize: 0.08 * innerHeight, textAlign: 'left', display: 'flex' }}>Quality Home<br /> Services, On<br /> Demand Plumbing</div>
             <div style={{ marginTop: 0.1 * innerHeight, fontSize: 0.022 * innerHeight, textAlign: 'left', display: 'flex' }}>We Make Finding Home Services Smoother,<br /> Faster and Better</div>
             <div style={{ border: "1px solid #AEA6A6", borderRadius: 0.3 * innerWidth, display: 'flex', marginTop: 0.1 * innerHeight, width: 0.35 * innerWidth, height: 0.09 * innerHeight, alignItems: 'center', justifyContent: 'center' }}>
               <img src={SearchLogo} alt="search-logo" style={{ width: 0.015 * innerWidth }} />
@@ -145,7 +145,7 @@ const Home = () => {
       </Slide>
       <Slide style={{ ...baseStyle }}>
       <div style={{ height: 0.9 * innerHeight, width: innerWidth, flexDirection: 'column', display: 'flex' }}>
-        <div style={{height: 0.2 * innerHeight, background: '#00c4ff',display:'flex',justifyContent:'center'}}>
+        <div style={{height: 0.2 * innerHeight,display:'flex',justifyContent:'center'}}>
           <h1 style={{ fontSize: 0.05 * innerHeight , alignself: 'center'}}>Find Services Providers In Town</h1>
         </div>
 
