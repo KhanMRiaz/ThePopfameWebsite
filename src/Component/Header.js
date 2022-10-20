@@ -14,7 +14,7 @@ import Logo from '../Assets/Header/Logo.png'
 const {innerHeight,innerWidth} = window
 
 const styles ={
-    fullWidthContainer:{ position:'fixed', width: innerWidth, height: innerHeight*0.10, alignItems: 'center', justifyContent: 'center', display: 'flex',borderBottom: '1px solid',borderColor:'black',backgroundColor:'white' },
+    fullWidthContainer:{zIndex:9999, position:'fixed', width: innerWidth, height: innerHeight*0.10, alignItems: 'center', justifyContent: 'center', display: 'flex',borderBottom: '1px solid',borderColor:'black',backgroundColor:'white' },
     innerContainer: { width: innerWidth*0.9, height:  innerHeight*0.10, alignItems: 'center', justifyContent: 'space-between', display: 'flex' },
     buttonsAndIconsContainer: { width: 0.4*innerWidth, flexDirection: 'row', display: 'flex', alignItems: 'center', justifyContent: 'space-between' },
     buttonContainer: { borderRadius: 100, height: 0.05*innerHeight, fontWeight: 'bold', alignItems: 'center', justifyContent:'center', display:'flex' },
