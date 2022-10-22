@@ -10,7 +10,7 @@ const Layout = (props) => {
         <>
             <Header/>
             {props.children}
-            {location !== '/login' && location !== '/' && <Footer />}
+            {location !== '/login' && location !== '/' && location !== '/chat' && <Footer />}
             
         </>
     )

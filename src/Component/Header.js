@@ -14,11 +14,11 @@ import Logo from '../Assets/Header/Logo.png'
 const {innerHeight,innerWidth} = window
 
 const styles ={
-    fullWidthContainer:{zIndex:9999, position:'fixed', width: innerWidth, height: innerHeight*0.10, alignItems: 'center', justifyContent: 'center', display: 'flex',borderBottom: '1px solid',borderColor:'black',backgroundColor:'white' },
+    fullWidthContainer:{zIndex:9999, position:'fixed', width: innerWidth, height: innerHeight*0.10, alignItems: 'center', justifyContent: 'center', display: 'flex',backgroundColor:'white' },
     innerContainer: { width: innerWidth*0.9, height:  innerHeight*0.10, alignItems: 'center', justifyContent: 'space-between', display: 'flex' },
     buttonsAndIconsContainer: { width: 0.4*innerWidth, flexDirection: 'row', display: 'flex', alignItems: 'center', justifyContent: 'space-between' },
     buttonContainer: { borderRadius: 100, height: 0.05*innerHeight, fontWeight: 'bold', alignItems: 'center', justifyContent:'center', display:'flex' },
-    iconContainer: { height: 0.1*innerHeight, justifyContent: 'center', display: 'flex', alignItems: 'center' },
+    iconContainer: { height: 0.1*innerHeight, justifyContent: 'center', display: 'flex', alignItems: 'center',cursor:'pointer' },
     profileDropdownContainer: {display:'flex', flexDirection:'column', position:'absolute',right:0.05*innerWidth,backgroundColor:colors.primaryColor, top: 0.09*innerHeight,width:0.12*innerWidth,justifyContent:'center',alignItems:'center'}
 }
 
@@ -81,7 +81,7 @@ const profileDropdownOptions = [
     {
         text:'Messages',
         icon: MessagesIcon,
-        navigateTo: '/login',
+        navigateTo: '/chat',
         separator: false
     },
     {
@@ -102,7 +102,7 @@ const Header = (props) => {
     return (
         <div style={styles.fullWidthContainer}>
             <div style={styles.innerContainer}>
-                <img src={Logo} style={{height:0.08*innerHeight}} />
+                <Link to={'/'}><img src={Logo} style={{height:0.08*innerHeight}} /></Link>
                 <div style={styles.buttonsAndIconsContainer}>
                     <ButtonContainer width={0.2*innerHeight} text={'Post a Job'}/>
                     <ButtonContainer width={0.26*innerHeight} text={'Become a Provider'}/>

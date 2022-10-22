@@ -10,6 +10,7 @@ import Layout from './Component/Layout';
 import Home from "./Pages/Home";
 import Login from './Pages/Login';
 import Private from './Component/Private';
+import Messages from "./Pages/Messages";
 // import Data from './Component/Data';
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
             <Routes>
               <Route path='/login' element={<Login />} />
               <Route path='/' element={<Home/>} />
-              <Route path='/private' element={<PrivateRoute component={Private}/>} exact />
+              <Route path='/chat' element={<PrivateRoute component={Messages}/>} exact />
             </Routes>
           </Layout>  
         </Router>

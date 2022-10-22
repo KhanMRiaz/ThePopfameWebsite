@@ -17,6 +17,7 @@ import FurnitureAssembly from '../Assets/Services/Slider/FurnitureAssembly.png'
 import moving from '../Assets/Services/Slider/moving.png'
 import Plumbing from '../Assets/Services/Slider/Plumbing.png'
 import qrcode from '../Assets/Services/qrcode.png'
+import ServiceProviderQrCode from '../Assets/Services/service-qrcode.png'
 import '../Component/style.css'
 
 
@@ -50,8 +51,10 @@ import StarRatings from 'react-star-ratings';
 const { innerHeight, innerWidth } = window
 
 const CustomControls = ({ getCurrentSlideIndex, slidesCount, onNext }) => {
+  console.log("=========",
+  )
   return (
-    <div style={{ left: '50%', bottom: '10px', position: 'fixed', transform: 'translateX(-50%)' }}>
+    <div style={{ left: '50%', bottom: '10px', position: 'fixed', transform: 'translateX(-50%)', display: getCurrentSlideIndex() === 3 ? 'none' : 'block', zIndex: 999 }}>
       <IconTint src={DownArrow} onClick={onNext} color={colors.primaryColor} />
     </div>
   )
@@ -72,7 +75,7 @@ const ImgSlider = () => {
   };
 
   return (
-    <div style={{ height: 0.45 * innerHeight, marginLeft: 0.045 * innerWidth,width: 0.92*innerWidth }}>
+    <div style={{ height: 0.45 * innerHeight, marginLeft: 0.045 * innerWidth, width: 0.92 * innerWidth }}>
 
       <Slider {...settings}>
         <div>
@@ -215,7 +218,7 @@ const CardSlider = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     prevArrow: <img style={{}} src={prevarrow} alt='' />,
-    nextArrow: <img style={{    right: '65px !important'    }} src={nextarrow} alt='' />,
+    nextArrow: <img style={{ right: '65px !important' }} src={nextarrow} alt='' />,
 
   };
   return (
@@ -235,14 +238,14 @@ const CardSlider = () => {
                 </div>
               </div>
               <div style={{ textAlign: 'initial', marginTop: 0.03 * innerHeight }}>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Delicious</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Healthyfood</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Delicious</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Healthyfood</button>
                 <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Cheflife</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Tasty</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Recipe</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Foodbloger</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Homemade</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Recipe</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Tasty</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Recipe</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Foodbloger</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Homemade</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Recipe</button>
 
               </div>
 
@@ -264,14 +267,14 @@ const CardSlider = () => {
                 </div>
               </div>
               <div style={{ textAlign: 'initial', marginTop: 0.03 * innerHeight }}>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Delicious</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Healthyfood</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Cheflife</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Tasty</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Recipe</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Foodbloger</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Homemade</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Recipe</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Delicious</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Healthyfood</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Cheflife</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Tasty</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Recipe</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Foodbloger</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Homemade</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Recipe</button>
 
               </div>
 
@@ -293,14 +296,14 @@ const CardSlider = () => {
                 </div>
               </div>
               <div style={{ textAlign: 'initial', marginTop: 0.03 * innerHeight }}>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Delicious</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Healthyfood</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Cheflife</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Tasty</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Recipe</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Foodbloger</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Homemade</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Recipe</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Delicious</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Healthyfood</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Cheflife</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Tasty</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Recipe</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Foodbloger</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Homemade</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Recipe</button>
 
               </div>
 
@@ -322,14 +325,14 @@ const CardSlider = () => {
                 </div>
               </div>
               <div style={{ textAlign: 'initial', marginTop: 0.03 * innerHeight }}>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Delicious</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Healthyfood</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Cheflife</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Tasty</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Recipe</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Foodbloger</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Homemade</button>
-                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.009 * innerHeight }}>Recipe</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Delicious</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Healthyfood</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Cheflife</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Tasty</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Recipe</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Foodbloger</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Homemade</button>
+                <button style={{ width: 0.07 * innerWidth, height: 0.04 * innerHeight, borderRadius: 0.2 * innerHeight, border: 'none', backgroundColor: 'rgba(141, 98, 76, 0.2)', margin: 0.008 * innerHeight }}>Recipe</button>
 
               </div>
 
@@ -360,26 +363,26 @@ const CompanySlider = () => {
 
   return (
     <div>
-            <Slider {...settings}>
+      <Slider {...settings}>
 
-      <div>
-        <img src={Airbnd} alt='alt' />
-      </div>
-      <div>
-        <img src={Automattic} alt='alt' />
-      </div>
-      <div>
-        <img src={Godaddy} alt='alt' />
-      </div>
-      <div>
-        <img src={Nasdaq} alt='alt' />
-      </div>
-      <div>
-        <img src={Bissell} alt='alt' />
-      </div>
-      <div>
-        <img src={Microsoft} alt='alt' />
-      </div>
+        <div>
+          <img src={Airbnd} alt='alt' />
+        </div>
+        <div>
+          <img src={Automattic} alt='alt' />
+        </div>
+        <div>
+          <img src={Godaddy} alt='alt' />
+        </div>
+        <div>
+          <img src={Nasdaq} alt='alt' />
+        </div>
+        <div>
+          <img src={Bissell} alt='alt' />
+        </div>
+        <div>
+          <img src={Microsoft} alt='alt' />
+        </div>
       </Slider>
     </div>
   )
@@ -441,10 +444,10 @@ const Home = () => {
           <CardSlider />
 
           <div style={{
-            height: 0.2 * innerHeight,width: 0.9*innerWidth, display: 'flex',
+            height: 0.2 * innerHeight, width: 0.9 * innerWidth, display: 'flex',
             justifyContent: 'center',
             flexDirection: 'column',
-            placeSelf:'center'
+            placeSelf: 'center'
           }}>
             <p>Trusted By</p>
             <CompanySlider />
@@ -452,30 +455,30 @@ const Home = () => {
 
         </div>
       </Slide>
-      <Slide style={{ ...baseStyle}}>
- <div style={{ height: 0.9 * innerHeight, flexDirection: 'column', display: 'flex' }}>
+      <Slide style={{ ...baseStyle }}>
+        <div style={{ height: 0.9 * innerHeight, flexDirection: 'column', display: 'flex' }}>
 
-<div style={{ height: 0.2 * innerHeight,width: 0.9 * innerWidth, alignSelf: 'center'}}>
-  <h3 style={{fontSize: 0.04 * innerHeight, fontWeight:600}}>Download Our App</h3>
-  <p>Scan the following QR code to download our applications.</p>
+          <div style={{ height: 0.2 * innerHeight, width: 0.9 * innerWidth, alignSelf: 'center' }}>
+            <h3 style={{ fontSize: 0.04 * innerHeight, fontWeight: 600 }}>Download Our App</h3>
+            <p>Scan the following QR code to download our applications.</p>
 
-</div>
-<div style={{ height: 0.4 * innerHeight,width: 0.9 * innerWidth,    alignSelf: 'center', display: 'flex',    justifyContent: 'space-around'}}>
-  <div className='main-div-second-column'>
-    <img style={{width: 0.17* innerWidth,height: 0.3 * innerHeight}} src={qrcode} alt="logo" className='' />
-    <p style={{fontSize: 0.03 * innerHeight , fontWeight:600}}>Popfame-Client (Beta)</p>
-  </div>
+          </div>
+          <div style={{ height: 0.4 * innerHeight, width: 0.9 * innerWidth, alignSelf: 'center', display: 'flex', justifyContent: 'space-around' }}>
+            <div className='main-div-second-column'>
+              <img style={{ width: 0.17 * innerWidth, height: 0.3 * innerHeight }} src={qrcode} alt="logo" className='' />
+              <p style={{ fontSize: 0.03 * innerHeight, fontWeight: 600 }}>Popfame-Client (Beta)</p>
+            </div>
 
-  <div className='main-div-second-column'>
-    <img style={{width: 0.17* innerWidth,height: 0.3 * innerHeight}}  src={qrcode} alt="logo" className='' />
-    <p style={{fontSize: 0.03 * innerHeight, fontWeight:600}}>Popfame-Service Provider (Beta)</p>
-  </div>
-</div>
-<Footer />
+            <div className='main-div-second-column'>
+              <img style={{ width: 0.17 * innerWidth, height: 0.3 * innerHeight }} src={ServiceProviderQrCode} alt="logo" className='' />
+              <p style={{ fontSize: 0.03 * innerHeight, fontWeight: 600 }}>Popfame-Service Provider (Beta)</p>
+            </div>
+          </div>
+          <Footer />
 
-</div> 
+        </div>
 
-    </Slide>
+      </Slide>
 
 
     </FullPage>

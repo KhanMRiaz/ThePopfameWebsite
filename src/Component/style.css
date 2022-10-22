@@ -4,88 +4,56 @@
     height: 30vh;
 }
 
-.first-child-section{
-    display: flex;
-}
-.logo-child-section{
-    width: 20%;
-}
-.links-child-section{
-    width: 40%;
-}
-.ul-links-section { 
-column-count: 3;
-list-style-type: none;
-margin-block-end: 0;
-padding-top: 15px;
-}
-.list-links-section{
+.list-links-section {
     padding: 6px;
 }
-.a-tag-section {
-    text-decoration: none;
-    list-style-type: none;
-    color: #000;
-}
 
-.firstchild-last-section{
-    width: 40%;
-}
-
-.firstchild-last-ul-section{
-    display: flex;
-    list-style-type: none;
-    padding-top: 21px;
-
-}
-.a-tag-firstchild-last-section img{
-    width: 20%;
-}
-
-.second-child-section{
-    display: flex;
-}
-.second-child-text-section{
-    width: 70%;
-    text-align-last: center;
-}
-.p-tag-second-child-text-section{
+.p-tag-second-child-text-section {
     margin-block-start: 32px;
     /* display: flex; */
     padding-left: 214px;
     margin-block-end: 1em;
 }
-.span-tag-second-child-text-section{
-    font-weight: 600;
-}
-.second-child-social-links-section{
-    width: 30%;
 
-}
-.ul-child-social-links-section{
+.ul-child-social-links-section {
     display: flex;
     list-style-type: none;
     margin-block-end: 0;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 
-.a-tag-child-social-links-section img{
-    width: 80%;
-
+.sideBarChat {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 16px;
+    /* fallback */
+    max-height: 32px;
+    /* fallback */
+    -webkit-line-clamp: 1;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
+    margin: 0px;
+    color: #828385;
+    font-weight: 400;
+    font-size: 11px;
+    padding-left: 8px;
+    text-align: initial;
 }
 
 
-
-.message-component{
+.message-component {
     bottom: 41px;
     position: fixed;
     right: 6px;
 }
-.message-component > a > img{
-    width: 80%;
-    height: auto;
+
+.slick-next {
+    right: 29px !important;
 }
-.slick-next{
-right: 65px !important;
+
+.slick-prev {
+    left: -3px !important;
+    z-index: 11;
 }
