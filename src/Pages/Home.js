@@ -41,6 +41,7 @@ import Bissell from '../Assets/Services/Slider/Bissell.png'
 import Godaddy from '../Assets/Services/Slider/Godaddy.png'
 import Microsoft from '../Assets/Services/Slider/Microsoft.png'
 import Nasdaq from '../Assets/Services/Slider/Nasdaq.png'
+import TextTransition, { presets } from "react-text-transition";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -49,6 +50,14 @@ import "slick-carousel/slick/slick-theme.css";
 import StarRatings from 'react-star-ratings';
 
 const { innerHeight, innerWidth } = window
+const TEXTS = [
+  "Plumbing",
+  "Landscaping",
+  "Moving",
+  "Furniture Assembly",
+  "Cleaning",
+  "Handyman",
+];
 
 const CustomControls = ({ getCurrentSlideIndex, slidesCount, onNext }) => {
   console.log("=========",
@@ -73,6 +82,8 @@ const ImgSlider = () => {
     cssEase: "linear",
     arrows: false
   };
+
+
 
   return (
     <div style={{ height: 0.45 * innerHeight, marginLeft: 0.045 * innerWidth, width: 0.92 * innerWidth }}>
@@ -391,7 +402,14 @@ const CompanySlider = () => {
 const Home = () => {
   const baseStyle = { alignItems: 'flex-end', zIndex: 111, display: 'flex', justifyContent: 'center', background: 'white' }
   const imageHeightUnit = 397
-
+  const [index, setIndex] = React.useState(0);
+  React.useEffect(() => {
+    const intervalId = setInterval(() =>
+      setIndex(index => index + 1),
+      3000 // every 3 seconds
+    );
+    return () => clearTimeout(intervalId);
+  }, []);
 
   return (
     // <div>Home</div>
@@ -400,7 +418,25 @@ const Home = () => {
       <Slide style={{ ...baseStyle }}>
         <div style={{ height: 0.9 * innerHeight, width: 0.9 * innerWidth, flexDirection: 'row', display: 'flex' }}>
           <div style={{ flexDirection: 'column', alignItems: 'flex-start', display: 'flex', width: 0.45 * innerWidth, height: 0.9 * innerHeight }}>
-            <div style={{ marginTop: 0.1 * innerHeight, fontWeight: '500', fontSize: 0.08 * innerHeight, textAlign: 'left', display: 'flex' }}>Quality Home<br /> Services, On<br /> Demand Plumbing</div>
+            <div style={{ display: "flex", width: 0.5 * innerWidth, flexDirection: 'row' ,}}>
+              <div style={{ marginTop: 0.1 * innerHeight, fontWeight: '500', fontSize: 0.05 * innerHeight, textAlign: 'left', display: 'flex',flexDirection:"row"}}>
+              <p>  Quality Home Services, 
+              <span style={{width:0.20*innerWidth,maxHeight:50,color:colors.primaryColor,}}>
+                <span  style={{color:'black',display:'inline-block'}}>On Demand</span>
+                <TextTransition springConfig={presets.wobbly}>
+                  {TEXTS[index % TEXTS.length]}
+                </TextTransition>
+              </span>
+              </p>
+              </div>
+            </div>
+            {/* <div style={{ marginTop: 0.1 * innerHeight, fontWeight: '500', fontSize: 0.08 * innerHeight, textAlign: 'left', display: 'flex', }}>Quality Home Services, On Demand
+              <div  style={{color:colors.primaryColor,}}>
+                <TextTransition springConfig={presets.wobbly}>
+                  {TEXTS[index % TEXTS.length]}
+                </TextTransition>
+              </div>
+            </div> */}
             <div style={{ marginTop: 0.1 * innerHeight, fontSize: 0.022 * innerHeight, textAlign: 'left', display: 'flex' }}>We Make Finding Home Services Smoother,<br /> Faster and Better</div>
             <div style={{ border: "1px solid #AEA6A6", borderRadius: 0.3 * innerWidth, display: 'flex', marginTop: 0.1 * innerHeight, width: 0.35 * innerWidth, height: 0.09 * innerHeight, alignItems: 'center', justifyContent: 'center' }}>
               <img src={SearchLogo} alt="search-logo" style={{ width: 0.015 * innerWidth }} />
@@ -466,12 +502,12 @@ const Home = () => {
           <div style={{ height: 0.4 * innerHeight, width: 0.9 * innerWidth, alignSelf: 'center', display: 'flex', justifyContent: 'space-around' }}>
             <div className='main-div-second-column'>
               <img style={{ width: 0.17 * innerWidth, height: 0.3 * innerHeight }} src={qrcode} alt="logo" className='' />
-              <p style={{ fontSize: 0.03 * innerHeight, fontWeight: 600 }}>Popfame-Client (Beta)</p>
+              <p style={{ fontSize: 0.03 * innerHeight, fontWeight: 600 }}>Popfame-Client</p>
             </div>
 
             <div className='main-div-second-column'>
               <img style={{ width: 0.17 * innerWidth, height: 0.3 * innerHeight }} src={ServiceProviderQrCode} alt="logo" className='' />
-              <p style={{ fontSize: 0.03 * innerHeight, fontWeight: 600 }}>Popfame-Service Provider (Beta)</p>
+              <p style={{ fontSize: 0.03 * innerHeight, fontWeight: 600 }}>Popfame-Service Provider</p>
             </div>
           </div>
           <Footer />

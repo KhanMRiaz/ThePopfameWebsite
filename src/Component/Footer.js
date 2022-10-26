@@ -76,7 +76,7 @@ const Footer = (props) => {
     
           <div style={{width:0.97* innerWidth, alignSelf: 'center',height: 0.1 * innerHeight, display: 'flex'}} className='second-child-section'>
             <div style={{width:0.68 * innerWidth ,  textAlignLast: 'center'}} className='second-child-text-section'>
-              <p className='p-tag-second-child-text-section'>&copy; 2022,<span style={{fontWeight: 600}} className='span-tag-second-child-text-section'>POP FAME .</span> All Rights Reserved</p>
+              <p className='p-tag-second-child-text-section'>&copy; 2022, <span style={{fontWeight: 600}} className='span-tag-second-child-text-section'>POPFAME.</span> All Rights Reserved</p>
     
             </div>
             <div style={{width:0.29 * innerWidth}} className='second-child-social-links-section'>
