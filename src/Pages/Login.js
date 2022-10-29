@@ -27,6 +27,8 @@ function Login(props) {
     // const [loader, setLoader] = useState(false)
 
     const [emailValid, setEmailValid] = useState()
+    const [passwordValid, setPasswordValid] = useState()
+
 
     const user = useSelector((state) => state.user);
     const loading = useSelector((state) => state.user.loading);
@@ -34,12 +36,9 @@ function Login(props) {
 
 
     const dispatch = useDispatch();
-console.log("===========",loading)
     useEffect(() => {
         console.log({ user })
     }, [])
-    // console.log("========Email",email)
-    // console.log("========Password",password)
     let credentais = {
         email: email,
         password: password,
@@ -48,23 +47,36 @@ console.log("===========",loading)
     }
     const checkEmailValid = () => {
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-            console.log("=======If=", email)
             setEmailValid(true)
         } else {
             if (email === '') {
                 setEmailValid(true)
             } else {
-                console.log("=======Else", email)
                 setEmailValid(false)
             }
         }
 
     }
+
+    const checkPasswordValid = () => {
+        
+        if (password.length >= 8) {
+            
+            setPasswordValid(true)
+        } else {
+            if (password === '') {
+                setPasswordValid(true)
+            } else {
+                setPasswordValid(false)
+            }
+        }
+
+    }
+
     const handleSubmit = () => {
         if (emailValid === true) {
             dispatch(login(credentais));
             if(success === true){
-                console.log("=========",success)
                 navigate("/chat")
             }
         }
@@ -85,7 +97,8 @@ console.log("===========",loading)
                         <div onClick={() => setPasswordHideToggle(!passwordHideToggle)} style={{ position: 'absolute', right: 0.37 * innerWidth, marginTop: 23, width: 40 }}>
                             <img src={EyeOff} width={25} height={25} />
                         </div>
-                        <input autoComplete='off' type={passwordHideToggle ? 'text' : 'password'} value={password} onChange={(password) => setPassword(password.target.value)} style={styles.inputFields} />
+                        <input autoComplete='off' type={passwordHideToggle ? 'text' : 'password'} value={password} onChange={(password) => setPassword(password.target.value)} style={styles.inputFields} onBlur={() => checkPasswordValid()}/>
+                        {passwordValid === false && <div style={styles.invalidEmail}    >Atleast 8 letters</div>}
                     </div>
                     <div style={styles.forgot}>Forgot Password?</div>
                     <div onClick={() => handleSubmit()} style={styles.button}>
