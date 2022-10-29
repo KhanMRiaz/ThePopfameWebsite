@@ -1,7 +1,8 @@
 const initialState = {
-    loading : true,
+    loading : false,
     error: false,
     user: {},
+    success:false
 },
 loginReducer = (state = initialState, action) => {
 switch (action.type)
@@ -12,10 +13,11 @@ switch (action.type)
             loading: true
         };
     case 'LOGIN_SUCCESS':
-        alert('inside res')
+        console.log("==========Success",action.payload)
         return Object.assign({}, state, {
                 loading: false,
                 error: false,
+                success:true,
                 user: action.payload
             });
     case 'LOGIN_ERROR':
@@ -23,7 +25,8 @@ switch (action.type)
         return {
              ...state,
              loading: false,
-             error: true
+             error: true,
+             success:false
         };
     default:
         return state;

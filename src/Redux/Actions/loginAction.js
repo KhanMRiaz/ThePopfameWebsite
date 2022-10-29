@@ -4,16 +4,19 @@ const baseURL = 'https://www.thepopfame.com'
 export const dataAction = { login };
 export function login(user) {
     return async dispatch => {
-        // dispatch(request());
-        try{
-            const res =await axios.post(baseURL + '/api/login', user)
-            console.log('res: ',res)
+        dispatch(request());
+        try {
+            const res = await axios.post(baseURL + '/api/login', user)
+            dispatch(success(res));
+
         }
-        catch(e){
-            console.log('err: ',e)
+        catch (e) {
+            console.log('err: ', e)
+            dispatch(failure());
+
         }
     };
-    function request() { return { type: 'LOGIN_REQUEST' }}
-    function success(data) { return { type: 'LOGIN_SUCCESS', payload : data }}
-    function failure(error) { return { type: 'LOGIN_ERROR', error }}
+    function request() { return { type: 'LOGIN_REQUEST' } }
+    function success(data) { return { type: 'LOGIN_SUCCESS', payload: data } }
+    function failure(error) { return { type: 'LOGIN_ERROR', error } }
 }
