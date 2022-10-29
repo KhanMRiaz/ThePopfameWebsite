@@ -26,6 +26,8 @@ function Login(props) {
     const [passwordHideToggle, setPasswordHideToggle] = useState(false)
 
     const [emailValid, setEmailValid] = useState()
+    const [passwordValid, setPasswordValid] = useState()
+
 
     const user = useSelector((state) => state.user);
     const loading = useSelector((state) => state.user?.loading);
@@ -36,8 +38,6 @@ function Login(props) {
     useEffect(() => {
         console.log({ user })
     }, [])
-    // console.log("========Email",email)
-    // console.log("========Password",password)
     let credentais = {
         email: email,
         password: password,
@@ -56,11 +56,26 @@ function Login(props) {
         }
 
     }
+
+    const checkPasswordValid = () => {
+        
+        if (password.length >= 8) {
+            
+            setPasswordValid(true)
+        } else {
+            if (password === '') {
+                setPasswordValid(true)
+            } else {
+                setPasswordValid(false)
+            }
+        }
+
+    }
+
     const handleSubmit = () => {
         if (emailValid === true) {
             dispatch(login(credentais));
             if(success === true){
-                console.log("=========",success)
                 navigate("/chat")
             }
         }
@@ -81,7 +96,8 @@ function Login(props) {
                         <div onClick={() => setPasswordHideToggle(!passwordHideToggle)} style={{ position: 'absolute', right: 0.37 * innerWidth, marginTop: 23, width: 40 }}>
                             <img src={EyeOff} width={25} height={25} />
                         </div>
-                        <input autoComplete='off' type={passwordHideToggle ? 'text' : 'password'} value={password} onChange={(password) => setPassword(password.target.value)} style={styles.inputFields} />
+                        <input autoComplete='off' type={passwordHideToggle ? 'text' : 'password'} value={password} onChange={(password) => setPassword(password.target.value)} style={styles.inputFields} onBlur={() => checkPasswordValid()}/>
+                        {passwordValid === false && <div style={{...styles.invalidEmail,textAlign:'end'}}    >Atleast 8 letters</div>}
                     </div>
                     <div style={styles.forgot}>Forgot Password?</div>
                     <div onClick={() => handleSubmit()} style={styles.button}>

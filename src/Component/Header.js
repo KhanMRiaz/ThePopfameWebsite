@@ -211,6 +211,19 @@ const IconContainer = ({ imageSrc, hasDropDown, dropdownOptions }) => {
     )
 }
 
+const NotificationContainer = ({imageSrc,hasDropDown,dropdownOptions}) => {
+    const [showDropDown, setShowDropDown] = useState(false)
+    return (
+        <div 
+        style={styles.iconContainer}
+        onMouseEnter={hasDropDown ? ()=>setShowDropDown(true) : null}
+        onMouseLeave={hasDropDown ? ()=>setShowDropDown(false) : null}>
+            <IconTint src={imageSrc} color = {showDropDown ? colors.secondaryColor : colors.primaryColor} style={{height:0.035*innerHeight}}/>
+            {showDropDown && <RenderNotificationDropdown dropdownOptions={dropdownOptions}/>}
+        </div>
+    )
+}
+
 const profileDropdownOptions = [
     {
         text: 'Services',
@@ -235,6 +248,33 @@ const profileDropdownOptions = [
         icon: LoginIcon,
         navigateTo: '/login',
         separator: true
+    }
+]
+
+const notificationDropdownOptions = [
+    {
+        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam',
+        icon: notificationBellicon,
+        navigateTo: '/',
+        separator: true
+    },
+    {
+        text:'Lorem ipsum dolor sit amet, consectetur ',
+        icon: notificationBellicon,
+        navigateTo: '/',
+        separator: false
+    },
+    {
+        text:'Lorem ipsum dolor sit amet, consectetur adipiscing ',
+        icon: notificationBellicon,
+        navigateTo: '/',
+        separator: false
+    },
+    {
+        text:'Lorem ipsum dolor sit amet, consectetur  ',
+        icon: notificationBellicon,
+        navigateTo: '/',
+        separator: false
     }
 ]
 
