@@ -98,7 +98,7 @@ function Login(props) {
                             <img src={EyeOff} width={25} height={25} />
                         </div>
                         <input autoComplete='off' type={passwordHideToggle ? 'text' : 'password'} value={password} onChange={(password) => setPassword(password.target.value)} style={styles.inputFields} onBlur={() => checkPasswordValid()}/>
-                        {passwordValid === false && <div style={styles.invalidEmail}    >Atleast 8 letters</div>}
+                        {passwordValid === false && <div style={{...styles.invalidEmail,textAlign:'end'}}    >Atleast 8 letters</div>}
                     </div>
                     <div style={styles.forgot}>Forgot Password?</div>
                     <div onClick={() => handleSubmit()} style={styles.button}>
