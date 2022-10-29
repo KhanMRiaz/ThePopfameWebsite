@@ -2,17 +2,19 @@ import React, { useState } from 'react'
 import Dots from '../Assets/Services/Dots.png'
 import './ChatBox.css'
 import { GiftedChat } from "react-web-gifted-chat";
+import { useSelector } from 'react-redux';
 
 const Chat = (props) => {
     const onSend = () => {
     }
     const [value, setValiue] = useState()
     const { innerHeight, innerWidth } = window
-    const renderInput = () =>{
-        return(
-            <div style={{backgroundColor:'red'}}>
-             <input style={{ backgroundColor: "white", borderColor: '#D1D3D6', borderRadius: 7, borderWidth: 1, borderStyle: 'solid', width: 0.57 * innerWidth, height: 40, paddingLeft: 20 }} onChange={(e)=>setValiue(e.target.value)} placeholder={'Write your message...'} /> 
-             </div>
+    const userId = useSelector((state) => state.user.user?.data?.user?.id)
+    const renderInput = () => {
+        return (
+            <div style={{ backgroundColor: 'red' }}>
+                <input style={{ backgroundColor: "white", borderColor: '#D1D3D6', borderRadius: 7, borderWidth: 1, borderStyle: 'solid', width: 0.57 * innerWidth, height: 40, paddingLeft: 20 }} onChange={(e) => setValiue(e.target.value)} placeholder={'Write your message...'} />
+            </div>
         )
     }
     return (
@@ -33,46 +35,46 @@ const Chat = (props) => {
                 <img src={props.image} width={86} height={86} style={{ borderRadius: 86 / 2 }} />
                 <div style={{ flex: 1, display: 'flex', paddingLeft: 0.015 * innerWidth, alignItems: 'flex-start', flexDirection: 'column' }}>
                     <h3 style={{ marginBlockEnd: 0, marginBlockStart: 0, marginBottom: 0.008 * innerHeight, fontWeight: '500' }}>{props.name}</h3>
-                    <p style={{ color: ' #8D624C', margin: 0 }}>{props.title}</p>
+                    {/* <p style={{ color: ' #8D624C', margin: 0 }}>{props.title}</p> */}
                 </div>
 
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginRight: 0.03 * innerWidth }}>
                     <img src={Dots} alt='' width={29} height={29} />
                 </div>
             </div>
-            <div className='chat__body' style={{ height: 0.8 * innerHeight }}>
+            <div className='chat__body' style={{ height: 0.8 * innerHeight,overflowY:'auto' }}>
                 {props.chat?.map((item, index) => {
                     return (
                         <>
-                            <div className='message-section'>
+                            {userId === item.sender_id && item.message && <div className='message-section'>
                                 <p className='chat__message chat_reciever'>
 
-                                    {item.user_id1 === item.reciverId && item.message}
+                                    {userId === item.sender_id && item.message}
                                 </p>
-                                <span className='chat_name span_chat_date'>{item.date}</span>
+                                <span className='chat_name span_chat_date'>{item.created_on.split('T')[0]}</span>
 
-                            </div>
+                            </div>}
 
-                            <div className='message-section'>
+                            {userId !== item.sender_id && item.message && <div className='message-section'>
                                 <div className='img_and_chat_div'>
                                     {/* <img src={cleaner} alt='ddd' /> */}
                                     <p className='chat__message'>
                                         {/* {item.user_id === item.senderId && item.message} */}
-                                        {item.message}
+                                        {userId !== item.sender_id && item.message}
                                     </p>
                                 </div>
-                                <span className='span_chat_date_from'>{item.date}</span>
+                                <span className='span_chat_date_from'>{item.created_on.split("T")[0]}</span>
 
-                            </div>
+                            </div>}
                         </>
                     )
                 })}
 
-                <div className='chat_footer' style={{ position: "absolute", top: 0.9 * innerHeight, }}>
-                    <input style={{ backgroundColor: "white", borderColor: '#D1D3D6', borderRadius: 7, borderWidth: 1, borderStyle: 'solid', width: 0.57 * innerWidth, height: 40, paddingLeft: 20 }} onChange={(e)=>setValiue(e.target.value)} placeholder={'Write your message...'} />
+                <div className='chat_footer' style={{ position: "absolute", top: 0.9 * innerHeight, backgroundColor:'white',height:93,}}>
+                    <input style={{ backgroundColor: "white", borderColor: '#D1D3D6', borderRadius: 7, borderWidth: 1, borderStyle: 'solid', width: 0.57 * innerWidth, height: 40, paddingLeft: 20 }} onChange={(e) => setValiue(e.target.value)} placeholder={'Write your message...'} />
 
                     {/* <div style={{ height: "76vh" }}> */}
-                        {/* <GiftedChat
+                    {/* <GiftedChat
                         renderInputToolbar={()=>renderInput()}
                             messages={"jshgdjasgdjasg"}
                             placeholder=

@@ -24,17 +24,15 @@ function Login(props) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [passwordHideToggle, setPasswordHideToggle] = useState(false)
-    // const [loader, setLoader] = useState(false)
 
     const [emailValid, setEmailValid] = useState()
 
     const user = useSelector((state) => state.user);
-    const loading = useSelector((state) => state.user.loading);
-    const success = useSelector((state) => state.user.success);
+    const loading = useSelector((state) => state.user?.loading);
+    const success = useSelector((state) => state.user?.success);
 
 
     const dispatch = useDispatch();
-console.log("===========",loading)
     useEffect(() => {
         console.log({ user })
     }, [])
@@ -48,13 +46,11 @@ console.log("===========",loading)
     }
     const checkEmailValid = () => {
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-            console.log("=======If=", email)
             setEmailValid(true)
         } else {
             if (email === '') {
                 setEmailValid(true)
             } else {
-                console.log("=======Else", email)
                 setEmailValid(false)
             }
         }

@@ -60,8 +60,6 @@ const TEXTS = [
 ];
 
 const CustomControls = ({ getCurrentSlideIndex, slidesCount, onNext }) => {
-  console.log("=========",
-  )
   return (
     <div style={{ left: '50%', bottom: '10px', position: 'fixed', transform: 'translateX(-50%)', display: getCurrentSlideIndex() === 3 ? 'none' : 'block', zIndex: 999 }}>
       <IconTint src={DownArrow} onClick={onNext} color={colors.primaryColor} />
@@ -109,15 +107,28 @@ const ImgSlider = () => {
           <div style={{ height: 0.45 * innerHeight, position: 'relative' }}>
             <img src={Cleaning} alt="ddd" style={{ height: 0.45 * innerHeight, width: 0.13 * innerWidth }} />
             <div style={{
-              color: 'white', fontWeight: 'bold', background: 'linear-gradient(rgba(0,0,0,0.30),rgba(0,0,0,.18))',
+              color: 'white', fontWeight: 'bold',
+              background: 'linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,.9))',
               color: 'white',
               height: '400px',
               height: 0.45 * innerHeight,
               width: 0.13 * innerWidth,
               position: 'absolute',
               borderRadius: 0.02 * innerHeight,
-              top: 0
-            }}><p>Cleaning</p></div>
+              justifyContent: "center",
+              top: 0,
+            }}
+            >
+              <p>Cleaning</p>
+              <div style={{
+                height: "100%",
+                justifyContent: "center",
+                display: "flex",
+                alignItems: "center"
+              }}>
+                <p>Coming Soon</p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -125,7 +136,7 @@ const ImgSlider = () => {
           <div style={{ height: 0.45 * innerHeight, position: 'relative' }}>
             <img src={FurnitureAssembly} alt="ddd" style={{ height: 0.45 * innerHeight, borderRadius: 0.02 * innerHeight, width: 0.13 * innerWidth }} />
             <div style={{
-              color: 'white', fontWeight: 'bold', background: 'linear-gradient(rgba(0,0,0,0.30),rgba(0,0,0,.18))',
+              color: 'white', fontWeight: 'bold', background: 'linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,.9))',
               color: 'white',
               height: '400px',
               borderRadius: 0.02 * innerHeight,
@@ -133,7 +144,15 @@ const ImgSlider = () => {
               width: 0.13 * innerWidth,
               position: 'absolute',
               top: 0
-            }}><p>Furniture<br />Assembly</p></div>
+            }}><p>Furniture<br />Assembly</p>
+            <div style={{
+              height: "100%",
+              justifyContent: "center",
+              display: "flex",
+              alignItems: "center"
+            }}>
+              <p>Coming Soon</p>
+            </div></div>
           </div>
         </div>
 
@@ -142,7 +161,7 @@ const ImgSlider = () => {
           <div style={{ height: 0.45 * innerHeight, position: 'relative' }}>
             <img src={moving} alt="ddd" style={{ height: 0.45 * innerHeight, borderRadius: 0.02 * innerHeight, width: 0.13 * innerWidth }} />
             <div style={{
-              color: 'white', fontWeight: 'bold', background: 'linear-gradient(rgba(0,0,0,0.30),rgba(0,0,0,.18))',
+              color: 'white', fontWeight: 'bold', background: 'linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,.9))',
               color: 'white',
               height: '400px',
               borderRadius: 0.02 * innerHeight,
@@ -150,7 +169,15 @@ const ImgSlider = () => {
               width: 0.13 * innerWidth,
               position: 'absolute',
               top: 0
-            }}><p>Moving</p></div>
+            }}><p>Moving</p>
+            <div style={{
+              height: "100%",
+              justifyContent: "center",
+              display: "flex",
+              alignItems: "center"
+            }}>
+              <p>Coming Soon</p>
+            </div></div>
           </div>
         </div>
 
@@ -158,7 +185,7 @@ const ImgSlider = () => {
           <div style={{ height: 0.45 * innerHeight, position: 'relative' }}>
             <img src={Plumbing} alt="ddd" style={{ height: 0.45 * innerHeight, width: 0.13 * innerWidth }} />
             <div style={{
-              color: 'white', fontWeight: 'bold', background: 'linear-gradient(rgba(0,0,0,0.30),rgba(0,0,0,.18))',
+              color: 'white', fontWeight: 'bold', background: 'linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,.9))',
               color: 'white',
               borderRadius: 0.02 * innerHeight,
               height: '400px',
@@ -166,7 +193,15 @@ const ImgSlider = () => {
               width: 0.13 * innerWidth,
               position: 'absolute',
               top: 0
-            }}><p>Plumbing</p></div>
+            }}><p>Plumbing</p>
+            <div style={{
+              height: "100%",
+              justifyContent: "center",
+              display: "flex",
+              alignItems: "center"
+            }}>
+              <p>Coming Soon</p>
+            </div></div>
           </div>
         </div>
 
@@ -174,7 +209,7 @@ const ImgSlider = () => {
           <div style={{ height: 0.45 * innerHeight, position: 'relative' }}>
             <img src={FurnitureAssembly} alt="ddd" style={{ height: 0.45 * innerHeight, borderRadius: 0.02 * innerHeight, width: 0.13 * innerWidth }} />
             <div style={{
-              color: 'white', fontWeight: 'bold', background: 'linear-gradient(rgba(0,0,0,0.30),rgba(0,0,0,.18))',
+              color: 'white', fontWeight: 'bold', background: 'linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,.9))',
               color: 'white',
               height: '400px',
               height: 0.45 * innerHeight,
@@ -182,7 +217,15 @@ const ImgSlider = () => {
               borderRadius: 0.02 * innerHeight,
               position: 'absolute',
               top: 0
-            }}><p>Furniture<br />Assembly</p></div>
+            }}><p>Furniture<br />Assembly</p>
+            <div style={{
+              height: "100%",
+              justifyContent: "center",
+              display: "flex",
+              alignItems: "center"
+            }}>
+              <p>Coming Soon</p>
+            </div></div>
           </div>
         </div>
 
@@ -190,7 +233,7 @@ const ImgSlider = () => {
           <div style={{ height: 0.45 * innerHeight, position: 'relative' }}>
             <img src={Plumbing} alt="ddd" style={{ height: 0.45 * innerHeight, width: 0.13 * innerWidth }} />
             <div style={{
-              color: 'white', fontWeight: 'bold', background: 'linear-gradient(rgba(0,0,0,0.30),rgba(0,0,0,.18))',
+              color: 'white', fontWeight: 'bold', background: 'linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,.9))',
               color: 'white',
               height: '400px',
               borderRadius: 0.02 * innerHeight,
@@ -198,7 +241,15 @@ const ImgSlider = () => {
               width: 0.13 * innerWidth,
               position: 'absolute',
               top: 0
-            }}><p>Plumbing</p></div>
+            }}><p>Plumbing</p>
+            <div style={{
+              height: "100%",
+              justifyContent: "center",
+              display: "flex",
+              alignItems: "center"
+            }}>
+              <p>Coming Soon</p>
+            </div></div>
           </div>
         </div>
 
@@ -418,16 +469,16 @@ const Home = () => {
       <Slide style={{ ...baseStyle }}>
         <div style={{ height: 0.9 * innerHeight, width: 0.9 * innerWidth, flexDirection: 'row', display: 'flex' }}>
           <div style={{ flexDirection: 'column', alignItems: 'flex-start', display: 'flex', width: 0.45 * innerWidth, height: 0.9 * innerHeight }}>
-            <div style={{ display: "flex", width: 0.5 * innerWidth, flexDirection: 'row' ,}}>
-              <div style={{ marginTop: 0.1 * innerHeight, fontWeight: '500', fontSize: 0.05 * innerHeight, textAlign: 'left', display: 'flex',flexDirection:"row"}}>
-              <p>  Quality Home Services, 
-              <span style={{width:0.20*innerWidth,maxHeight:50,color:colors.primaryColor,}}>
-                <span  style={{color:'black',display:'inline-block'}}>On Demand</span>
-                <TextTransition springConfig={presets.wobbly}>
-                  {TEXTS[index % TEXTS.length]}
-                </TextTransition>
-              </span>
-              </p>
+            <div style={{ display: "flex", width: 0.5 * innerWidth, flexDirection: 'row', }}>
+              <div style={{ marginTop: 0.1 * innerHeight, fontWeight: '500', fontSize: 0.05 * innerHeight, textAlign: 'left', display: 'flex', flexDirection: "row" }}>
+                <p>  Quality Home Services,
+                  <span style={{ width: 0.20 * innerWidth, maxHeight: 50, color: colors.primaryColor, }}>
+                    <span style={{ color: 'black', display: 'inline-block' }}>On Demand</span>
+                    <TextTransition springConfig={presets.wobbly}>
+                      {TEXTS[index % TEXTS.length]}
+                    </TextTransition>
+                  </span>
+                </p>
               </div>
             </div>
             {/* <div style={{ marginTop: 0.1 * innerHeight, fontWeight: '500', fontSize: 0.08 * innerHeight, textAlign: 'left', display: 'flex', }}>Quality Home Services, On Demand
