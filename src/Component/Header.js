@@ -52,10 +52,10 @@ const RenderProfileDropdown = ({dropdownOptions}) => {
             {dropdownOptions && dropdownOptions.map(({text,icon,navigateTo,separator})=><Link to={navigateTo} style={{textDecoration:'none'}}>
                 {separator  && <div style={{borderTop:'1px solid #FFFFFF',width:0.1*innerWidth}}/>}
                     <div onMouseEnter={()=>setHoverOn(text)}
-                        style={{backgroundColor:hoverOn === text ? colors.secondaryColor : colors.primaryColor, height:0.04*innerHeight,alignItems:'center',justifyContent:'center',display:'flex',marginTop:0.01*innerHeight,marginBottom: 0.01*innerHeight,width:0.12*innerWidth}}>
-                        <div style={{backgroundColor:hoverOn === text ? colors.secondaryColor : colors.primaryColor, height:0.04*innerHeight,alignItems:'center',justifyContent:'space-between',display:'flex',marginTop:0.01*innerHeight,marginBottom: 0.01*innerHeight,width:0.07*innerWidth}}>
-                        <IconTint src={icon} color={text === hoverOn ? colors.primaryColor : 'white'} style={{height:0.03*innerHeight}}/>
-                        <p style={{color:text === hoverOn ? colors.primaryColor : 'white', textAlign:'left',width:0.045*innerWidth,fontWeight:'bold'}}>{text}</p>
+                        style={{backgroundColor:hoverOn === text ? colors.secondaryColor : colors.secondaryColor, height:0.04*innerHeight,alignItems:'center',justifyContent:'center',display:'flex',marginTop:0.01*innerHeight,marginBottom: 0.01*innerHeight,width:0.12*innerWidth}}>
+                        <div style={{backgroundColor:hoverOn === text ? colors.secondaryColor : colors.secondaryColor, height:0.04*innerHeight,alignItems:'center',justifyContent:'space-between',display:'flex',marginTop:0.01*innerHeight,marginBottom: 0.01*innerHeight,width:0.07*innerWidth}}>
+                        <IconTint src={icon} color={text === hoverOn ? colors.primaryColor : colors.primaryColor} style={{height:0.03*innerHeight}}/>
+                        <p style={{color:text === hoverOn ? colors.primaryColor : colors.primaryColor, textAlign:'left',width:0.045*innerWidth,fontWeight:'bold'}}>{text}</p>
                         </div>
                     </div>
                 </Link>
@@ -96,7 +96,7 @@ const IconContainer = ({imageSrc,hasDropDown,dropdownOptions}) => {
         <div 
         style={styles.iconContainer}
         onMouseEnter={hasDropDown ? ()=>setShowDropDown(true) : null}
-        onMouseLeave={hasDropDown ? ()=>setShowDropDown(false) : null}>
+        onMouseLeave={hasDropDown ? ()=>setShowDropDown(true) : null}>
             <IconTint src={imageSrc} color = {showDropDown ? colors.secondaryColor : colors.primaryColor} style={{height:0.035*innerHeight}}/>
             {showDropDown && <RenderProfileDropdown dropdownOptions={dropdownOptions}/>}
         </div>
