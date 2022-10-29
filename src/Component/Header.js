@@ -219,7 +219,7 @@ const NotificationContainer = ({imageSrc,hasDropDown,dropdownOptions}) => {
         onMouseEnter={hasDropDown ? ()=>setShowDropDown(true) : null}
         onMouseLeave={hasDropDown ? ()=>setShowDropDown(false) : null}>
             <IconTint src={imageSrc} color = {showDropDown ? colors.secondaryColor : colors.primaryColor} style={{height:0.035*innerHeight}}/>
-            {showDropDown && <RenderNotificationDropdown dropdownOptions={dropdownOptions}/>}
+            {/* {showDropDown && <RenderNotificationDropdown dropdownOptions={dropdownOptions}/>} */}
         </div>
     )
 }
@@ -251,32 +251,32 @@ const profileDropdownOptions = [
     }
 ]
 
-const notificationDropdownOptions = [
-    {
-        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam',
-        icon: notificationBellicon,
-        navigateTo: '/',
-        separator: true
-    },
-    {
-        text:'Lorem ipsum dolor sit amet, consectetur ',
-        icon: notificationBellicon,
-        navigateTo: '/',
-        separator: false
-    },
-    {
-        text:'Lorem ipsum dolor sit amet, consectetur adipiscing ',
-        icon: notificationBellicon,
-        navigateTo: '/',
-        separator: false
-    },
-    {
-        text:'Lorem ipsum dolor sit amet, consectetur  ',
-        icon: notificationBellicon,
-        navigateTo: '/',
-        separator: false
-    }
-]
+// const notificationDropdownOptions = [
+//     {
+//         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam',
+//         icon: notificationBellicon,
+//         navigateTo: '/',
+//         separator: true
+//     },
+//     {
+//         text:'Lorem ipsum dolor sit amet, consectetur ',
+//         icon: notificationBellicon,
+//         navigateTo: '/',
+//         separator: false
+//     },
+//     {
+//         text:'Lorem ipsum dolor sit amet, consectetur adipiscing ',
+//         icon: notificationBellicon,
+//         navigateTo: '/',
+//         separator: false
+//     },
+//     {
+//         text:'Lorem ipsum dolor sit amet, consectetur  ',
+//         icon: notificationBellicon,
+//         navigateTo: '/',
+//         separator: false
+//     }
+// ]
 
 const Header = (props) => {
 
