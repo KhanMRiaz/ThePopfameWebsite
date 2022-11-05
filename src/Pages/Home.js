@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { FullPage, Slide } from 'react-full-page'
 
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
-
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 import Footer from '../Component/Footer'
 import DownArrow from '../Assets/Services/DownArrow.png'
 import ServicesBanner from '../Assets/Services/ServicesBanner.png'
@@ -75,8 +74,8 @@ const ImgSlider = () => {
 		slidesToShow: 5,
 		slidesToScroll: 1,
 		autoplay: true,
-		speed: 2000,
-		autoplaySpeed: 0,
+		speed: 5000,
+		autoplaySpeed: 1000,
 		cssEase: "linear",
 		arrows: false
 	};
@@ -279,27 +278,15 @@ const CardSlider = () => {
 		speed: 500,
 		slidesToShow: 3,
 		slidesToScroll: 1,
-		prevArrow: <img src={prevarrow} alt='' />,
-		nextArrow: <img src={nextarrow} alt='' />,
+		prevArrow: <img style={{}} src={prevarrow} alt='' />,
+		nextArrow: <img style={{ right: '65px !important' }} src={nextarrow} alt='' />,
 
 	};
 	return (
-		<div style={{ 
-			alignSelf: 'center', 
-			width: 0.9 * innerWidth, 
-			marginTop: 0.005 * innerHeight, 
-			marginBottom: 0.02 * innerHeight,
-			textAlign: '-webkit-center'
-			}}>
+		<div style={{ height: 0.48 * innerHeight, alignSelf: 'center', width: 0.95 * innerWidth, marginTop: 0.005 * innerHeight, marginBottom: 0.02 * innerHeight, marginLeft: 0.07 * innerHeight }}>
 			<Slider {...settings}>
 				<div>
-					<div style={{ 
-						minHeight: 0.3 * innerHeight, 
-						maxHeight: 0.6 * innerHeight, 
-						width: 0.5 * innerHeight, 
-						backgroundColor: '#FFFDFD', 
-						boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px', 
-						borderRadius: 0.02 * innerHeight, margin: 0.006 * innerHeight }}>
+					<div style={{ minHeight: 0.3 * innerHeight, maxHeight: 0.6 * innerHeight, width: 0.5 * innerHeight, backgroundColor: '#FFFDFD', boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px', borderRadius: 0.02 * innerHeight, margin: 0.006 * innerHeight }}>
 						<div style={{ paddingTop: 0.03 * innerHeight, paddingBottom: 0.03 * innerHeight, paddingLeft: 0.02 * innerWidth, paddingRight: 0.02 * innerWidth }}>
 
 							<div style={{ display: 'flex' }}>
@@ -575,7 +562,7 @@ const Home = () => {
 			{/* services */}
 			<Slide style={{ ...baseStyle, background: colors.secondaryColor }}>
 				<div style={{ height: 0.9 * innerHeight, width: innerWidth, flexDirection: 'column', display: 'flex' }}>
-					<div style={{ alignItems: 'center', justifyContent: 'flex-start', flexDirection: 'column', display: 'flex', height: 0.27 * innerHeight }}>
+					<div style={{ alignItems: 'center', justifyContent: 'flex-start', flexDirection: 'column', display: 'flex', height: 0.3 * innerHeight }}>
 						<div style={{ backgroundColor: '#fff', border: "1px solid #AEA6A6", borderRadius: 0.3 * innerWidth, zIndex: 1, display: 'flex', marginTop: 0.1 * innerHeight, width: 0.3 * innerWidth, height: 0.07 * innerHeight, alignItems: 'center', justifyContent: 'center' }}>
 							<img src={SearchLogo} alt="search-logo" style={{ height: 0.015 * innerWidth }} />
 							<input style={{ border: 'none', width: 0.23 * innerWidth, fontSize: 0.022 * innerHeight, marginLeft: 0.005 * innerWidth, outline: 'none' }} type="text" placeholder='Enter Here' />

@@ -291,13 +291,10 @@ const profileDropdownOptions = [
 
 const Header = (props) => {
 	const token = useSelector((state) => state?.user?.user?.data?.token)
-	const profilePicture =useSelector((state) => state.user.user.data.user.profile_picture)
-	console.log("🚀 ~ file: Header.js ~ line 284 ~ Header ~ profilePicture", profilePicture)
+	const profilePicture =useSelector((state) => state.user?.user?.data?.user?.profile_picture)
 	let getImage = () => {
         return baseURL + '/api/request_images/' + profilePicture
     }
-	console.log("🚀 ~ file: Header.js ~ line 288 ~ getImage ~ getImage", getImage())
-
 	if (token) {
 		profileDropdownOptions[3].text = 'Logout'
 	}
