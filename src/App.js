@@ -1,6 +1,6 @@
 
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Redirect } from "react-router-dom";
 import './App.css';
 import PrivateRoute from './Component/PrivateRoute';
 import { Provider } from "react-redux";
@@ -23,6 +23,7 @@ function App() {
                 <Route path='/login' element={<Login />} />
                 <Route path='/' element={<Home />} />
                 <Route path='/chat' element={<PrivateRoute component={Messages} />} exact />
+                <Redirect from='*' to='/'/>
               </Routes>
             </Layout>
           </Router>
