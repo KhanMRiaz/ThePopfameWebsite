@@ -9,7 +9,7 @@ import MessagesIcon from '../Assets/Header/MessagesIcon.png'
 import WalletIcon from '../Assets/Header/WalletIcon.png'
 import ServicesIcon from '../Assets/Header/ServicesIcon.png'
 import LoginIcon from '../Assets/Header/LoginIcon.png'
-import Logo from '../Assets/Header/Logo.png'
+import Logo from '../Assets/Header/POPFAMELOGO.png'
 import StepProgressBar from 'react-step-progress';
 import Dropdown from 'react-dropdown';
 import { useDispatch, useSelector } from 'react-redux'
@@ -210,30 +210,29 @@ const RenderProfileDropdown = ({ dropdownOptions }) => {
 }
 
 const IconContainer = ({ imageSrc, hasDropDown, dropdownOptions }) => {
-    const [showDropDown, setShowDropDown] = useState(false)
-    return (
-        <div
-
-            style={styles.iconContainer}
-            onMouseEnter={hasDropDown ? () => setShowDropDown(true) : null}
-            onMouseLeave={hasDropDown ? () => setShowDropDown(false) : null}>
-            <IconTint src={imageSrc} color={showDropDown ? colors.secondaryColor : colors.primaryColor} style={{ height: 0.035 * innerHeight }} />
-            {showDropDown && <RenderProfileDropdown dropdownOptions={dropdownOptions} />}
-        </div>
-    )
+	const [showDropDown, setShowDropDown] = useState(false)
+	return (
+		<div
+			style={styles.iconContainer}
+			onMouseEnter={hasDropDown ? () => setShowDropDown(true) : null}
+			onMouseLeave={hasDropDown ? () => setShowDropDown(false) : null}>
+			<img src={imageSrc} alt='ddd' style={{height: 0.04 * innerHeight }} />
+			{showDropDown && <RenderProfileDropdown dropdownOptions={dropdownOptions} />}
+		</div>
+	)
 }
 
 const NotificationContainer = ({ imageSrc, hasDropDown, dropdownOptions }) => {
-    const [showDropDown, setShowDropDown] = useState(false)
-    return (
-        <div
-            style={styles.iconContainer}
-            onMouseEnter={hasDropDown ? () => setShowDropDown(true) : null}
-            onMouseLeave={hasDropDown ? () => setShowDropDown(false) : null}>
-            <IconTint src={imageSrc} color={showDropDown ? colors.secondaryColor : colors.primaryColor} style={{ height: 0.035 * innerHeight }} />
-            {/* {showDropDown && <RenderNotificationDropdown dropdownOptions={dropdownOptions}/>} */}
-        </div>
-    )
+	const [showDropDown, setShowDropDown] = useState(false)
+	return (
+		<div
+			style={styles.iconContainer}
+			onMouseEnter={hasDropDown ? () => setShowDropDown(true) : null}
+			onMouseLeave={hasDropDown ? () => setShowDropDown(false) : null}>
+			<IconTint src={imageSrc} color={showDropDown ? colors.secondaryColor : colors.primaryColor} style={{ height: 0.04 * innerHeight }} />
+			{/* {showDropDown && <RenderNotificationDropdown dropdownOptions={dropdownOptions}/>} */}
+		</div>
+	)
 }
 
 const profileDropdownOptions = [
@@ -291,26 +290,31 @@ const profileDropdownOptions = [
 // ]
 
 const Header = (props) => {
-    const token = useSelector((state) => state?.user?.user?.data?.token)
-    if (token) {
-        profileDropdownOptions[3].text = 'Logout'
-        profileDropdownOptions[3].navigateTo = '/'
-        
+	const token = useSelector((state) => state?.user?.user?.data?.token)
+	const profilePicture =useSelector((state) => state.user.user.data.user.profile_picture)
+	console.log("🚀 ~ file: Header.js ~ line 284 ~ Header ~ profilePicture", profilePicture)
+	let getImage = () => {
+        return baseURL + '/api/request_images/' + profilePicture
     }
-    return (
-        <div style={styles.fullWidthContainer}>
-            <div style={styles.innerContainer}>
-                <Link to={'/'}><img src={Logo} style={{ height: 0.08 * innerHeight }} /></Link>
-                <div style={styles.buttonsAndIconsContainer}>
-                    {/* <ButtonContainer hasDropDown={true} width={0.2 * innerHeight} text={'Post a Job'} />
+	console.log("🚀 ~ file: Header.js ~ line 288 ~ getImage ~ getImage", getImage())
+
+	if (token) {
+		profileDropdownOptions[3].text = 'Logout'
+	}
+	return (
+		<div style={styles.fullWidthContainer}>
+			<div style={styles.innerContainer}>
+				<Link to={'/'}><img src={Logo} style={{ height: 0.08 * innerHeight }} /></Link>
+				<div style={styles.buttonsAndIconsContainer}>
+					{/* <ButtonContainer hasDropDown={true} width={0.2 * innerHeight} text={'Post a Job'} />
                     <ButtonContainer width={0.26 * innerHeight} text={'Become a Provider'} /> */}
 
-                    {/* <IconContainer imageSrc={NotificationIcon} hasDropDown={false} /> */}
-                    <IconContainer imageSrc={ProfileIcon} hasDropDown={true} dropdownOptions={profileDropdownOptions} />
-                </div>
-            </div>
-        </div>
-    )
+					{/* <IconContainer imageSrc={NotificationIcon} hasDropDown={false} /> */}
+					<IconContainer imageSrc={getImage() ? getImage() :ProfileIcon} hasDropDown={true} dropdownOptions={profileDropdownOptions} />
+				</div>
+			</div>
+		</div>
+	)
 }
 
 export default Header

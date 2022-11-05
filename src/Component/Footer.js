@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import AppStore from '../Assets/Footer/AppStore.png'
-import Logo from '../Assets/Header/Logo.png'
+import Logo from '../Assets/Header/POPFAMELOGO.png'
 import './style.css'
 
 
@@ -65,9 +65,9 @@ const Footer = (props) => {
 							</Link> */}
 						</li>
 						<li className='firstchild-last-list-section'>
-							<Link className='a-tag-firstchild-last-section' to='/'>
+							<a className='a-tag-firstchild-last-section' href='https://play.google.com/store/apps/details?id=com.popfameapp'>
 								<img src={GooglePlay} alt="logo" className='' />
-							</Link>
+							</a>
 						</li>
 
 					</ul>
