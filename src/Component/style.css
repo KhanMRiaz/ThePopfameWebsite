@@ -50,13 +50,17 @@
 }
 
 .slick-next {
-    right: 29px !important;
+    right: 0px !important;
 }
 
+
 .slick-prev {
-    left: -3px !important;
+    left: 0px !important;
     z-index: 11;
 }
+
+ 
+
 .wrapperStep{
     width: 100%;
     display: flex;

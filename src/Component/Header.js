@@ -9,7 +9,7 @@ import MessagesIcon from '../Assets/Header/MessagesIcon.png'
 import WalletIcon from '../Assets/Header/WalletIcon.png'
 import ServicesIcon from '../Assets/Header/ServicesIcon.png'
 import LoginIcon from '../Assets/Header/LoginIcon.png'
-import Logo from '../Assets/Header/Logo.png'
+import Logo from '../Assets/Header/POPFAMELOGO.png'
 import StepProgressBar from 'react-step-progress';
 import Dropdown from 'react-dropdown';
 import { useDispatch, useSelector } from 'react-redux'
@@ -205,7 +205,7 @@ const IconContainer = ({ imageSrc, hasDropDown, dropdownOptions }) => {
 			style={styles.iconContainer}
 			onMouseEnter={hasDropDown ? () => setShowDropDown(true) : null}
 			onMouseLeave={hasDropDown ? () => setShowDropDown(false) : null}>
-			<IconTint src={imageSrc} color={showDropDown ? colors.secondaryColor : colors.primaryColor} style={{ height: 0.035 * innerHeight }} />
+			<img src={imageSrc} alt='ddd' style={{height: 0.04 * innerHeight }} />
 			{showDropDown && <RenderProfileDropdown dropdownOptions={dropdownOptions} />}
 		</div>
 	)
@@ -218,7 +218,7 @@ const NotificationContainer = ({ imageSrc, hasDropDown, dropdownOptions }) => {
 			style={styles.iconContainer}
 			onMouseEnter={hasDropDown ? () => setShowDropDown(true) : null}
 			onMouseLeave={hasDropDown ? () => setShowDropDown(false) : null}>
-			<IconTint src={imageSrc} color={showDropDown ? colors.secondaryColor : colors.primaryColor} style={{ height: 0.035 * innerHeight }} />
+			<IconTint src={imageSrc} color={showDropDown ? colors.secondaryColor : colors.primaryColor} style={{ height: 0.04 * innerHeight }} />
 			{/* {showDropDown && <RenderNotificationDropdown dropdownOptions={dropdownOptions}/>} */}
 		</div>
 	)
@@ -280,6 +280,13 @@ const profileDropdownOptions = [
 
 const Header = (props) => {
 	const token = useSelector((state) => state?.user?.user?.data?.token)
+	const profilePicture =useSelector((state) => state.user.user.data.user.profile_picture)
+	console.log("🚀 ~ file: Header.js ~ line 284 ~ Header ~ profilePicture", profilePicture)
+	let getImage = () => {
+        return baseURL + '/api/request_images/' + profilePicture
+    }
+	console.log("🚀 ~ file: Header.js ~ line 288 ~ getImage ~ getImage", getImage())
+
 	if (token) {
 		profileDropdownOptions[3].text = 'Logout'
 	}
@@ -292,7 +299,7 @@ const Header = (props) => {
                     <ButtonContainer width={0.26 * innerHeight} text={'Become a Provider'} /> */}
 
 					{/* <IconContainer imageSrc={NotificationIcon} hasDropDown={false} /> */}
-					<IconContainer imageSrc={ProfileIcon} hasDropDown={true} dropdownOptions={profileDropdownOptions} />
+					<IconContainer imageSrc={getImage() ? getImage() :ProfileIcon} hasDropDown={true} dropdownOptions={profileDropdownOptions} />
 				</div>
 			</div>
 		</div>
