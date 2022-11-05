@@ -290,11 +290,17 @@ const profileDropdownOptions = [
 // ]
 
 const Header = (props) => {
+	const [profileImg, setProfileImg] = useState(ProfileIcon)
 	const token = useSelector((state) => state?.user?.user?.data?.token)
 	const profilePicture =useSelector((state) => state.user?.user?.data?.user?.profile_picture)
-	let getImage = () => {
-        return baseURL + '/api/request_images/' + profilePicture
-    }
+	useEffect(() => {
+		let getImage = () => {
+			const res = baseURL + '/api/request_images/' + profilePicture
+			setProfileImg(res)
+		 }  
+		 getImage()
+	  }, [])
+	
 	if (token) {
 		profileDropdownOptions[3].text = 'Logout'
 	}
@@ -307,7 +313,7 @@ const Header = (props) => {
                     <ButtonContainer width={0.26 * innerHeight} text={'Become a Provider'} /> */}
 
 					{/* <IconContainer imageSrc={NotificationIcon} hasDropDown={false} /> */}
-					<IconContainer imageSrc={getImage() ? getImage() :ProfileIcon} hasDropDown={true} dropdownOptions={profileDropdownOptions} />
+					<IconContainer imageSrc={profileImg} hasDropDown={true} dropdownOptions={profileDropdownOptions} />
 				</div>
 			</div>
 		</div>
