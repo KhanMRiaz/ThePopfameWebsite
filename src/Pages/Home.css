@@ -1,0 +1,347 @@
+.baseStyle {
+    align-items: flex-end;
+    z-index: 111;
+    display: flex;
+    justify-content: center;
+    background: white;
+    height: 100%;
+
+}
+
+.first-section {
+    height: 90vh;
+    width: 90vw;
+    flex-direction: row;
+    display: flex;
+}
+
+.first-section-text {
+    flex-direction: column;
+    align-items: flex-start;
+    display: flex;
+    height: 90vh;
+    width: 45vw;
+}
+
+.first-section-text-part1 {
+    display: flex;
+    width: 683px;
+    width: 45vw;
+    flex-direction: row;
+}
+
+.catagories-span {
+    width: 45vw;
+    max-height: 100px;
+    color: rgb(135, 99, 80);
+    font-size: 7vh;
+}
+
+.first-section-text-part2 {
+    margin-top: 1vh;
+    font-size: 3vh;
+    text-align: left;
+    display: flex;
+}
+
+.search-input-section {
+    border: 1px solid rgb(174, 166, 166);
+    border-radius: 5vw;
+    display: flex;
+    margin-top: 1vh;
+    width: 478.1px;
+    align-items: center;
+    justify-content: center;
+    width: 35vw;
+    height: 9vh;
+}
+
+.SearchLogo {
+    width: 1.5vw;
+}
+
+.search-input-tag {
+    border: none;
+    width: 314.18px;
+    font-size: 3vh;
+    margin-left: 6.83px;
+    outline: none;
+    height: 6vh;
+    width: 23vw;
+    margin-left: 0.5vw;
+
+}
+
+.search-btn {
+    border-radius: 300px;
+    border: none;
+    background-color: rgb(135, 99, 80);
+    color: white;
+    font-size: 3vh;
+    height: 8vh;
+    width: 9vw;
+}
+
+.first-image-section {
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    width: 45vw;
+    /* width: 90vh; */
+    height: 90vh;
+}
+
+.Main-image {
+    height: 80vh;
+}
+
+.secound-container {
+    flex-direction: column;
+    display: flex;
+    height: 90vh;
+    width: 90vw;
+}
+
+.secound-container-first-part {
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    display: flex;
+    height: 30vh;
+}
+
+.secound-container-input-container {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(174, 166, 166);
+    border-radius: 25vw;
+    z-index: 1;
+    display: flex;
+    margin-top: 62.4px;
+    width: 409.8px;
+    height: 43.68px;
+    align-items: center;
+    justify-content: center;
+    height: 7vh;
+    width: 30vw;
+    margin-top: 10vh;
+}
+
+.secound-container-input-container img {
+    height: 3vh;
+}
+
+.secound-container-input-container .secound-container-input-tag {
+    border: none;
+    width: 314.18px;
+    font-size: 13.728px;
+    margin-left: 6.83px;
+    outline: none;
+    font-size: 3vh;
+    width: 24vw;
+    margin-left: 1vw;
+}
+
+.secound-container-paint-img {
+    height: 26vh;
+    margin-top: -17vh;
+    margin-left: -15vw;
+}
+
+.secound-container-h1-section {
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    height: 10vh;
+}
+
+.secound-container-h1-section h1 {
+    font-size: 4vh;
+
+}
+
+.secound-container-imgSlider {
+    width: 90vw;
+    height: 50vh;
+    text-align: -webkit-center;
+}
+
+.secound-container-imgSlider-main-section {
+    height: 280.8px;
+    position: relative;
+    height: 45vh;
+}
+
+.secound-container-imgSlider-main-section .imgSlider-main-section-img {
+    height: 45vh;
+    width: 177.58px;
+    width: 13vw;
+}
+
+.imgborder {
+    border-radius: 0.7vw;
+}
+
+.imgSlider-text-section {
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.18));
+    height: 280.8px;
+    width: 177.58px;
+    position: absolute;
+    border-radius: 12.48px;
+    top: 0px;
+    height: 45vh;
+    width: 13vw;
+    left: 2.5vw;
+    border-radius: 0.7vw;
+
+}
+
+.imggradient {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, .9));
+}
+
+.comming-soon {
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+}
+
+.third-container {
+    flex-direction: column;
+    display: flex;
+    height: 90vh;
+    width: 90vw;
+}
+.third-container-color{
+    background-color: #FAFAFA;
+}
+
+.third-container-text-section {
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+}
+
+.third-container-text-section h1 {
+    font-size: 5vh;
+}
+
+.third-container-cardslider {
+    width: 90vw;
+    height: 50vh;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+    text-align: -webkit-center;
+    align-self: center;
+}
+
+.cardsliderMain {
+    background-color: rgb(255, 253, 253);
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    border-radius: 2vh;
+    margin: 1vh 1vw;
+    width: 23vw;
+    height: 54vh;
+}
+
+.cardsliderMain-Padding {
+    padding: 3.2vh 1.5vw;
+    border-radius: 20vw;
+    border-radius: 2vw;
+}
+
+.cardsliderMain-img-section {
+    display: flex;
+}
+
+.cardsliderMain-img-section-p-tag {
+    font-size: 2vh;
+}
+
+.cardsliderMain-btn {
+    text-align: initial;
+    margin-top: 2vh;
+}
+
+.cardsliderMain-btn button {
+    border: none;
+    background-color: rgba(141, 98, 76, 0.2);
+    margin: 1vh 0.5vw;
+    height: 4vh;
+    width: 7vw;
+    border-radius: 1vw;
+
+}
+
+.cardslider-comment-section {
+    text-align: initial;
+    margin-top: 12.48px;
+    background-color: rgb(233, 233, 233);
+    border-radius: 3%;
+    padding: 3%;
+}
+
+.card-first-comment {
+    display: flex;
+}
+
+.card-first-comment-img {
+    width: 2vw;
+}
+
+.main-comment-section {
+    line-height: 0;
+    margin-left: 0.5vw;
+    width: 80%;
+}
+
+.main-comment-section-p-tag {
+    font-size: 1.5vh;
+}
+
+.main-comment-section-span-tag {
+    font-size: 1vh;
+    float: right;
+}
+
+.image-border {
+    border-radius: 50%
+}
+
+.main-comment-section-2nd-p-tag {
+    line-height: 1;
+}
+.last-section-container{
+    height: 90vh;
+    flex-direction: column;
+    display: flex;
+}
+
+.last-section-container-text-section{
+    align-self: center;
+    height: 20vh;
+    width: 90vw;
+}
+.last-section-container-text-section h3{
+    font-weight: 600;
+    font-size: 4vh;
+}
+
+.qrcode-section{
+    align-self: center;
+    display: flex;
+    justify-content: space-around;
+    width: 90vw;
+    height: 40vh;
+}
+.main-div-second-column img{
+     height: 32vh;
+width: 17vw;
+}
+.main-div-second-column p{
+    font-weight: 600;
+    font-size: 3vh;
+}

@@ -1,0 +1,53 @@
+.sideBar-inner-container{
+    display: flex;
+    cursor: pointer;
+    border: 1px solid rgb(232, 234, 237);
+    border-radius: 7px;
+    margin: 1.2vh 1.2vw;
+    padding: 1vh 0.6vw;
+}
+.sideBar-inner-container-first-section{
+    display: flex;
+    align-items: center;
+}
+.sideBar-inner-container-first-section img{
+    border-radius: 3vw;
+}
+.first-section-name-msg{
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.first-section-name{
+    color: rgb(141, 98, 76);
+    font-size: 11px;
+    font-weight: 400;
+    padding: 8px 8px 3px;
+}
+
+.sideBar-inner-container-scnd-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1.6vh;
+}
+.scnd-section-time{
+    margin-left: auto;
+}
+.scnd-section-time p{
+    margin: 0px;
+    color: rgb(130, 131, 133);
+    font-size: 8px;
+    font-weight: 400;
+}
+.scnd-section-jobId{
+    align-self: flex-end;
+    margin-top: 1.5vh;
+}
+.scnd-section-jobId p{
+    margin: 0px;
+    color: rgb(130, 131, 133);
+    font-size: 8px;
+    font-weight: 700;
+}

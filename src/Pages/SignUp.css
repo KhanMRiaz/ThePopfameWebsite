@@ -1,0 +1,94 @@
+.SignUp-fullScreenContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 10vh;
+  
+}
+.SignUp-fullScreenContainerWithoutNav{
+    display: flex;
+    flex-direction: column;
+}
+.SignUp-headingContainer{
+    color: rgb(0, 0, 0);
+    padding: 8vh 8vw;
+    font-size: 4.5vh;
+}
+
+.signUp-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.signUp-formContainer{
+    flex-direction: column;
+    display: flex;
+    align-items: flex-start;
+    margin-top: 2.5vh;
+}
+.signUp-inputLabel{
+    margin-left: 1vw;
+    font-size: 2vh;
+    padding-bottom: 1vh;
+    color: black;
+    padding-left: 1vw;
+}
+
+.signUp-inputField{
+    background-color: rgb(252, 244, 244);
+    padding: 0 2vw;
+    width: 20vw;
+    margin-bottom: 2vh;
+    font-size: 2vh;
+    border-radius: 5vw;
+    height: 10vh;
+    border: 1px solid rgb(135, 99, 80);
+    outline: none;
+    margin: 0 1vw;
+
+}
+.SignUp-emailValid{
+    text-decoration: none;
+    align-self: flex-end;
+    color: red;
+    font-size: 2vh;
+    margin-top: 0.5vh;
+    margin-bottom: 4vh;
+    margin-right: 1vw;
+}
+
+.SignUp-formGroup{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+     align-items: center; 
+     justify-content: center;
+     margin: 3vh 0;
+}
+.SignUp-FormControlLabel{
+    display: flex;
+}
+.SignUp-Label-div{
+    display: flex;
+    flex-direction: row;  
+}
+.SignUp-Label{
+    display: flex;
+}
+
+.SignUp-Label-left{
+    padding-left: 5;
+}
+
+.signUp-login-section{
+    align-self: center;
+    flex-direction: row;
+    display: flex;
+    margin: 2vh 0;
+    font-size: 2vh;
+}
+.signUp-login-section-link{
+    text-decoration: underline rgb(135, 99, 80);
+    font-weight: 500;
+    padding: 0 0.4vw;
+}

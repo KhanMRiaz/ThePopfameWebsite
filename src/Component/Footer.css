@@ -1,0 +1,86 @@
+.footer-main-section{
+    flex-direction: column;
+    display: flex;
+    background-color: rgba(141, 98, 76, 0.3);
+    height: 30vh;
+    width: 100vw;
+}
+.footer-main-section-first-section{
+    align-self: center;
+    display: flex;
+    width: 90vw;
+    height: 17vh;
+
+}
+.first-section-logo{
+    width: 10vw;
+    text-align: -webkit-left;
+}
+
+.first-section-logo img{
+    height: 10vh;
+    width: 4.5vw;
+}
+
+.links-child-section{
+    width: 40vw;
+}
+.ul-links-section{
+    column-count: 3;
+    list-style: none;
+    margin-block-end: 0px;
+}
+.list-links-section{
+    padding: 1vh 1vw;
+}
+.list-links-section a{
+    text-decoration: none;
+    list-style: none;
+    color: rgb(0, 0, 0);
+}
+.google-play-link-section{
+    width: 40vw;
+    display: flex;
+    list-style: none;
+}
+.firstchild-last-ul-section{
+    list-style: none;
+    display: flex;
+}
+
+.second-child-section{
+    align-self: center;
+    display: flex;
+    height: 10vh;
+    width: 90vw;
+}
+
+.second-child-text-section{
+    width: 70vw;
+    text-align-last: center;
+}
+.p-tag-second-child-text-section {
+    margin-block-start: 32px;
+    padding-left: 20vw;
+    margin-block-end: 1em;
+}
+
+
+.p-tag-second-child-text-section span{
+    font-weight: 600;
+}
+.second-child-social-links-section{
+    width: 30vw;
+
+}
+.ul-child-social-links-section {
+    display: flex;
+    list-style-type: none;
+    margin-block-end: 0;
+    justify-content: center;
+}
+
+.list-child-social-links-section{
+    padding-right: 2vw;
+}
+

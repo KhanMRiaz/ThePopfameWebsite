@@ -1,0 +1,122 @@
+.Login-fullScreenContainer{
+    display: flex;
+    height: 624px;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100vh;
+}
+
+.fullScreenContainerWithoutNav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 90vh;
+    width: 25vw;
+}
+.headingContainer{
+margin-top: 10vh;
+display: flex;
+font-size: 24.96px;
+font-size: 4vh;
+}
+
+.formContainer{
+    flex-direction: column;
+    display: flex;
+    align-items: flex-start;
+    margin-top: 5vh;
+}
+
+.Login-inputLabel{
+    margin-left: 1vw;
+    font-size: 13.728px;
+    margin-bottom: 0.5vh;
+    font-size: 2vh;
+}
+
+.login-inputFields{
+    width: 25vw;
+    padding: 0 1.5vw;
+    margin-bottom: 2vh;
+    font-size: 2.5vh;
+    height: 10vh;
+    border-radius: 40px;
+    border: 1px solid rgb(135, 99, 80);
+    outline: none;
+
+}
+.eyeoff{
+    position: absolute;
+    right: 505.42px;
+    margin-top: 23px;
+    width: 40px;
+    right: 38vw;
+    margin-top: 3vh;
+    width: 3vw;
+}
+.forgot{
+    text-decoration: underline;
+    margin-bottom: 24.96px;
+    font-size: 2vh;
+    margin-bottom: 4vh;
+    align-self: flex-end;
+}
+
+.login-btn{
+    background-color: rgb(135, 99, 80);
+    border-radius: 40px;
+    color: white;
+    height: 10vh;
+    width: 28vw;
+    font-weight: bold;
+    font-size: 13.728px;
+    margin-bottom: 5vh;
+    font-size: 2.4vh;
+    outline: none;
+    border-radius: 6vh;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+}
+.Login-loading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28vw;
+    margin-bottom: 3vh;
+}
+.Login-hr{
+    border-bottom: 1px solid rgb(135, 99, 80);
+    width: 7vw;
+}
+
+.Login-hr-content{
+    transform: translateY(50%);
+    color: rgb(135, 99, 80);
+    margin: 0 2vw;
+    font-size: 2vh;
+}
+.hr-div{
+    align-self: center;
+    flex-direction: row;
+    display: flex;
+}
+.Register-content{
+    align-self: center;
+    flex-direction: row;
+    display: flex;
+    font-size: 13.728px;
+    margin-top: 4vh;
+    font-size: 2.3vh;
+}
+.register-link{
+    
+        color: rgb(135, 99, 80);
+        text-decoration: underline rgb(135, 99, 80);
+        font-weight: 500;
+        padding: 0 0.4vw;
+    
+}

@@ -1,0 +1,124 @@
+.loader-BallTriangle{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex: 1 1 0%;
+    align-self: center;
+}
+.ChatScreen-main-container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100vh;
+    width: 100vw;
+}
+.sideBarChatScreen-main-container{
+    align-items: center;
+    flex-direction: row;
+    width: 90vw;
+    height: 90vh;
+    display: flex;
+}
+.ChatScreen-inner-section{
+    background-color: #fff;
+    width: 25vw;
+    height: 90vh;
+}
+.ChatScreen-backbtn-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 18vw;
+    height: 10vh;
+    padding-top: 8vh;
+
+}
+.chatsection-back-btn{
+    text-decoration-line:none;
+}
+.chatsection-back-btn-inner{
+    background-color: rgb(244, 245, 246);
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: 6vw;
+    height: 6vh;
+    border-radius: 0.6vw;
+    margin-left: 1vw;
+}
+.back-btn-arrow{
+    display: flex;
+    align-items: center;
+    padding-left: 0.8vw;
+}
+
+.back-btn-arrow-text{
+    color: black;
+    font-weight: 400;
+    padding-left: 0.4vw;
+    font-size: 1.9vh;
+}
+.messages-btn{
+    font-weight: 700;
+    color: black;
+    padding-left: 1.8vw;
+    font-size: 3.4vh;
+}
+.chatsection-search-input{
+    width: 19vw;
+    height: 8vh;
+    margin-left: 1.3vw;
+    display: flex;
+    align-items: center;
+}
+.searchLogo{
+    position: absolute;
+    margin-top: 0.8vh;
+    margin-left: 0.7vw;
+}
+.chatsection-input{
+    background-color: white;
+    border-radius: 7px;
+    border-color: rgb(232, 234, 237);
+    border-width: 1px;
+    border-style: solid;
+    width: 100%;
+    height: 6vh;
+    padding-left: 2.5vw;
+}
+.two-btn-container{
+    display: flex;
+    margin-left: 1vw;
+}
+.two-btn-container-first{
+    background-color: rgb(141, 98, 76);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 7px;
+    height: 4vh;
+    margin: 1vh 1vw;
+    width: 3.3vw;
+}
+.two-btn-container-snd{
+    background-color: rgb(241, 243, 245);
+    color: rgb(130, 131, 133);
+    border: none;
+    border-radius: 7px;
+    width: 6vw;
+    margin: 1vh 1vw;
+    height: 4vh;
+}
+.sidebar-messages-section{
+    overflow-y: auto;
+    height: 60vh;
+}
+.Chat-section{
+    flex-direction: column;
+    height: 90vh;
+    width: 73vw;
+    display: flex;
+    place-self: flex-end;
+
+}

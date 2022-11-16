@@ -37,6 +37,8 @@ font-weight: 500;
 }
 .chat__body {
     background-color: #fff;
+    height: 80vh;
+    overflow-y: auto;
     flex: 1 1;
     background-position: center;
     padding: 30px;
@@ -101,8 +103,23 @@ background-color: #FCECE5 !important;
     display: flex ;
     justify-content: space-between;
     align-items: center;
-    height: 62px;
     align-self:flex-end;
+    position: absolute;
+    background-color: white;
+    height: 10vh;
+    bottom: -6vh;
+}
+.chat_footer input{
+    background-color: white;
+    border-color: rgb(209, 211, 214);
+    border-radius: 7px;
+    border-width: 1px;
+    border-style: solid;
+    width: 778.62px;
+    height: 40px;
+    width: 57vw;
+    height: 7vh;
+    padding-left: 1.3vw;
 }
 .chat_footer > form{
     flex:1;

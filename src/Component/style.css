@@ -4,9 +4,7 @@
     height: 30vh;
 }
 
-.list-links-section {
-    padding: 6px;
-}
+
 
 .p-tag-second-child-text-section {
     margin-block-start: 32px;
@@ -15,12 +13,7 @@
     margin-block-end: 1em;
 }
 
-.ul-child-social-links-section {
-    display: flex;
-    list-style-type: none;
-    margin-block-end: 0;
-    justify-content: center;
-}
+
 
 
 .sideBarChat {

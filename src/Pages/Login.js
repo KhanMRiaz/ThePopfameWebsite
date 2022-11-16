@@ -8,17 +8,18 @@ import { Link, useNavigate } from "react-router-dom";
 import { withAlert } from 'react-alert';
 import { baseURL } from '../Redux/Actions/serviceAction';
 import axios from 'axios';
+import './Login.css'
 
 const { innerHeight, innerWidth } = window
 const styles = {
 	fullScreenContainer: { display: 'flex', height: innerHeight, alignItems: 'flex-end', justifyContent: 'center' },
 	fullScreenContainerWithoutNav: { display: 'flex', flexDirection: 'column', height: 0.9 * innerHeight, width: 0.25 * innerWidth, alignItems: 'center', justifyContent: 'flex-start' },
-	headingContainer: { color: colors.primaryColor, marginTop: 0.05 * innerHeight, display: 'flex', fontSize: 0.04 * innerHeight },
+	headingContainer: { color: colors.primaryColor},
 	formContainer: { flexDirection: 'column', display: 'flex', alignItems: 'flex-start', marginTop: 0.05 * innerHeight },
 	inputFields: { backgroundColor: 'white', paddingLeft: 20, paddingRight: 20, width: 0.25 * innerWidth, marginBottom: 0.02 * innerHeight, fontSize: 0.02 * innerHeight, height: 65, borderRadius: 40, border: '1px solid' + colors.primaryColor, outline: 'none' },
-	inputLabel: { marginLeft: 0.01 * innerWidth, marginBottom: 0.01 * innerHeight, fontSize: 0.022 * innerHeight, color: colors.primaryColor },
-	button: { marginBottom: 0.05 * innerHeight, width: 0.25 * innerWidth + 40, height: 65, backgroundColor: colors.primaryColor, borderRadius: 40, color: 'white', fontWeight: 'bold', fontSize: 0.022 * innerHeight, outline: 'none', border: 'none', alignItems: 'center', justifyContent: "center", display: "flex", cursor: 'pointer' },
-	forgot: { fontSize: 0.022 * innerHeight, textDecoration: 'underline', marginBottom: 0.04 * innerHeight, alignSelf: 'flex-end', color: colors.primaryColor },
+	inputLabel: {color: colors.primaryColor },
+	button: { backgroundColor: colors.primaryColor},
+	forgot: { color: colors.primaryColor },
 	invalidEmail: { fontSize: 0.022 * innerHeight, textDecoration: 'none', marginBottom: 0.04 * innerHeight, alignSelf: 'flex-end', color: 'red' }
 }
 
@@ -107,27 +108,27 @@ console.log("===========,User",user)
 	}
 
 	return (
-		<div style={styles.fullScreenContainer}>
-			<div style={styles.fullScreenContainerWithoutNav}>
-				<div style={styles.headingContainer}>Log In</div>
-				<div style={styles.formContainer}>
-					<div style={styles.inputLabel}>Name:</div>
-					<input autoComplete={'off'} type="text" value={email} placeholder={'johndoe@gmail.com'} onChange={(email) => setEmail(email.target.value)} style={styles.inputFields} onBlur={() => checkEmailValid()} />
+		<div className='Login-fullScreenContainer' >
+			<div className='fullScreenContainerWithoutNav'>
+				<div className='headingContainer' style={styles.headingContainer}>Log In</div>
+				<div className='formContainer' style={styles.formContainer}>
+					<div className='Login-inputLabel' style={styles.inputLabel}>Name:</div>
+					<input className='login-inputFields' autoComplete={'off'} type="text" value={email} placeholder={'johndoe@gmail.com'} onChange={(email) => setEmail(email.target.value)} onBlur={() => checkEmailValid()} />
 					{emailValid === false && <div style={styles.invalidEmail}>Email is invalid</div>}
-					<div style={styles.inputLabel}>Password:</div>
+					<div className='Login-inputLabel' style={styles.inputLabel}>Password:</div>
 					<div>
-						<div onClick={() => setPasswordHideToggle(!passwordHideToggle)} style={{ position: 'absolute', right: 0.37 * innerWidth, marginTop: 23, width: 40 }}>
+						<div onClick={() => setPasswordHideToggle(!passwordHideToggle)} className='eyeoff'>
 							<img src={EyeOff} width={25} height={25} />
 						</div>
-						<input autoComplete='off' type={passwordHideToggle ? 'text' : 'password'} value={password} onChange={(password) => setPassword(password.target.value)} style={styles.inputFields} onBlur={() => checkPasswordValid()} />
+						<input className='login-inputFields' autoComplete='off' type={passwordHideToggle ? 'text' : 'password'} value={password} onChange={(password) => setPassword(password.target.value)} style={styles.inputFields} onBlur={() => checkPasswordValid()} />
 						{passwordValid === false && <div style={{ ...styles.invalidEmail, textAlign: 'end' }}    >Atleast 8 letters</div>}
 					</div>
-					<Link to={'/reset'} style={styles.forgot}>Forgot Password?</Link>
-					<div onClick={() => handleSubmit()} style={styles.button}>
+					<Link to={'/reset'} className='forgot' style={styles.forgot}>Forgot Password?</Link>
+					<div className='login-btn' onClick={() => handleSubmit()} style={styles.button}>
 						Log In
 					</div>
 					{loading &&
-						<div style={{ width: 0.25 * innerWidth, display: "flex", alignItems: "center", marginBottom: 20, justifyContent: "center", marginLeft: 20 }} >
+						<div className='Login-loading'  >
 							<BallTriangle
 								height={50}
 								width={50}
@@ -136,12 +137,12 @@ console.log("===========,User",user)
 								ariaLabel="ball-triangle-loading"
 							/>
 						</div>}
-					<div style={{ alignSelf: 'center', flexDirection: 'row', display: 'flex' }}>
-						<div style={{ width: 0.07 * innerWidth, borderBottom: '1px solid ' + colors.primaryColor }} />
-						<div style={{ transform: 'translateY(50%)', fontSize: 0.022 * innerHeight, color: colors.primaryColor, marginRight: 0.015 * innerWidth, marginLeft: 0.015 * innerWidth }}>OR</div>
-						<div style={{ width: 0.07 * innerWidth, borderBottom: '1px solid ' + colors.primaryColor }} />
+					<div className='hr-div' >
+						<div className='Login-hr'  />
+						<div className='Login-hr-content'>OR</div>
+						<div className='Login-hr' />
 					</div>
-					<div style={{ marginTop: 0.06 * innerHeight, alignSelf: 'center', flexDirection: 'row', display: 'flex', fontSize: 0.022 * innerHeight }}>Not a User <Link to={'/register'} style={{ color: colors.primaryColor, textDecoration: 'underline', paddingLeft: 8, paddingRight: 8, textDecorationColor: colors.primaryColor, fontWeight: '500' }}> {'Register'} </Link> From Email</div>
+					<div className='Register-content'>Not a User <Link to={'/register'} className='register-link' style={{color: colors.primaryColor}}> {'Register'} </Link> From Email</div>
 				</div>
 			</div>
 		</div>

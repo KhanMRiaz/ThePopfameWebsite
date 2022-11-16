@@ -12,6 +12,7 @@ import { chatAction, success } from '../Redux/Actions/chatAction'
 import axios from 'axios'
 import { baseURL } from '../Redux/Actions/serviceAction'
 import { BallTriangle } from 'react-loader-spinner'
+import './Messages.css'
 
 const Messages = () => {
     const token = useSelector((state) => state?.user?.user?.data.token)
@@ -237,40 +238,40 @@ const Messages = () => {
     // }, [bidsWithMessages])
     return (
         <>
-            {loader ?
-                <div style={{flex:1,justifyContent:"center",alignItems:"center",width:'100%',height:'100vh',display:"flex",alignSelf:"center"}}>
+            {/* {loader ?
+                <div className='loader-BallTriangle'>
                     <BallTriangle color={'#8D624C'} width={100} height={100} />
                 </div>
-                :
-                <div style={{ height: innerHeight, width: innerWidth, display: 'flex', justifyContent: 'center', alignItems: 'flex-end' }}>
-                    <div style={{ width: 0.9 * innerWidth, height: 0.9 * innerHeight, alignItems: "center", flexDirection: 'row', display: 'flex' }}>
-                        <div style={{ width: 0.25 * innerWidth, height: 0.9 * innerHeight, backgroundColor: 'white' }}>
-                            <div style={{ width: 0.18 * innerWidth, height: 0.1 * innerHeight, display: "flex", flexDirection: 'row', paddingTop: 50, alignItems: 'center' }}>
-                                <Link to={'/'} style={{ textDecorationLine: 'none' }}>
-                                    <div style={{ backgroundColor: '#F4F5F6', width: 82.27, height: 37.4, alignItems: "center", display: 'flex', borderRadius: 7, marginLeft: 15, display: "flex", flexDirection: 'row' }}>
-                                        <div style={{ display: "flex", alignItems: 'center', paddingLeft: 8 }}>
+                : */}
+                <div className='ChatScreen-main-container'>
+                    <div className='sideBarChatScreen-main-container'>
+                        <div className='ChatScreen-inner-section'>
+                            <div className='ChatScreen-backbtn-section'>
+                                <Link className='chatsection-back-btn' to={'/'}>
+                                    <div className='chatsection-back-btn-inner'>
+                                        <div className='back-btn-arrow'>
                                             <img src={ArrowLeft} width={17} height={17} />
                                         </div>
-                                        <div style={{ color: 'black ', fontSize: 11, fontWeight: "400", paddingLeft: 4 }}>
+                                        <div className='back-btn-arrow-text'>
                                             BACK
                                         </div>
                                     </div>
                                 </Link>
-                                <div style={{ fontWeight: '700', fontSize: 20, color: "black", paddingLeft: 20 }}>
+                                <div className='messages-btn'>
                                     Messages
                                 </div>
                             </div>
-                            <div style={{ width: 0.19 * innerWidth, height: 0.08 * innerHeight, marginLeft: 15, display: "flex", alignItems: 'center' }}>
-                                <div style={{ position: "absolute", marginTop: 3, marginLeft: 10 }}>
+                            <div className='chatsection-search-input'>
+                                <div className='searchLogo' >
                                     <img src={Search} />
                                 </div>
-                                <input style={{ backgroundColor: 'white', borderRadius: 7, borderColor: '#E8EAED', borderWidth: 1, borderStyle: 'solid', width: '100%', height: 37, paddingLeft: 30 }} placeholder={'Search'} />
+                                <input className='chatsection-input' placeholder={'Search'} />
                             </div>
-                            <div style={{ marginLeft: 10, display: 'flex' }}>
-                                <button style={{ margin: 0.01 * innerHeight, height: 25, backgroundColor: '#8D624C', color: '#fff', border: 'none', borderRadius: 7, width: 44 }}>All</button>
-                                <button style={{ margin: 0.01 * innerHeight, height: 25, backgroundColor: '#F1F3F5', color: '#828385', border: 'none', borderRadius: 7, width: 83 }}>Unread</button>
+                            <div className='two-btn-container'>
+                                <button className='two-btn-container-first'>All</button>
+                                <button className='two-btn-container-snd' >Unread</button>
                             </div>
-                            <div style={{ overflowY: 'auto', height: 0.6 * innerHeight, }}>
+                            <div className='sidebar-messages-section'>
                                 {
                                     bidsWithMessages?.map((item, index) => {
                                         return (
@@ -284,11 +285,12 @@ const Messages = () => {
                                 }
                             </div>
                         </div>
-                        <div style={{ height: 0.9 * innerHeight, width: 0.73 * innerWidth, flexDirection: 'column', display: 'flex', placeSelf: 'flex-end' }}>
+                        <div className='Chat-section'>
                             <Chat name={chat?.first_name + chat.last_name} userId={chat.id} image={getImage(chat)} title={"Title"} chat={messages} />
                         </div>
                     </div>
-                </div>}
+                </div>
+                {/* } */}
         </>
     )
 }

@@ -8,16 +8,12 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { Link } from 'react-router-dom'
+import './SignUp.css'
+
+
 const { innerHeight, innerWidth } = window
 const styles = {
-    fullScreenContainer: { display: 'flex', alignItems: ' center', flexDirection: "column", paddingTop: 0.11 * innerHeight },
-    fullScreenContainerWithoutNav: { display: 'flex', flexDirection: 'column', },
-    headingContainer: { color: '#000000',fontSize: 0.04 * innerHeight , padding:50 },
-    formContainer: { flexDirection: 'column', display: 'flex', alignItems: 'flex-start', marginTop: 15 },
-    inputFields: { backgroundColor: '#FCF4F4', paddingLeft: 20, paddingRight: 20, width: 0.2 * innerWidth, marginBottom: 0.02 * innerHeight, fontSize: 0.02 * innerHeight, height: 65, borderRadius: 40, border: '1px solid' + colors.primaryColor, outline: 'none', marginRight: 15, marginLeft: 15 },
-    invalidEmail: { fontSize: 0.022 * innerHeight, textDecoration: 'none', marginBottom: 0.04 * innerHeight, alignSelf: 'flex-end', color: 'red' },
-    button: { marginBottom: 0.02 * innerHeight, width: 0.25 * innerWidth + 40, height: 65, backgroundColor: colors.primaryColor, borderRadius: 40, color: 'white', fontWeight: 'bold', fontSize: 0.022 * innerHeight, outline: 'none', border: 'none', alignItems: 'center', justifyContent: "center", display: "flex", cursor: 'pointer', marginTop: 30 },
-    inputLabel: { marginLeft: 0.01 * innerWidth, fontSize: 0.022 * innerHeight, color: 'black', paddingBottom: 5, paddingLeft: 15 },
+    button: { backgroundColor: colors.primaryColor},
 
 }
 const SignUp = () => {
@@ -46,51 +42,54 @@ const SignUp = () => {
     }
     const Label = () => {
         return (
-            <div style={{ display: 'flex', flexDirection: 'row' }}>
-                <div style={{ display: "flex" }}>I agree with <div style={{ color: colors.primaryColor, paddingLeft: 5 }}>terms</div> <div style={{ paddingLeft: 5 }}>and </div><div style={{ color: colors.primaryColor, paddingLeft: 5 }}>condition</div></div>
+            <div className='SignUp-Label-div'>
+                <div className='SignUp-Label'>I agree with <div className='SignUp-Label-left' style={{ paddingLeft: 5, color: colors.primaryColor}}>terms</div> <div style={{ paddingLeft: 5 }}>and </div><div  className='SignUp-Label-left' style={{paddingLeft: 5, color: colors.primaryColor}}>condition</div></div>
             </div>
         )
     }
     return (
         <>
-            <div style={styles.fullScreenContainer}>
-                <div style={styles.fullScreenContainerWithoutNav}>
-                    <div style={styles.headingContainer}>User Sign Up</div>
+            <div className='SignUp-fullScreenContainer'>
+                <div className='SignUp-fullScreenContainerWithoutNav' >
+                    <div className='SignUp-headingContainer' >User Sign Up</div>
                 </div>
-                <div style={{ display: "flex", flexDirection: "row", justifyContent: 'space-between' }}>
-                    <div style={styles.formContainer}>
-                        <div style={styles.inputLabel}>First Name</div>
-                        <input autoComplete={'off'} type="text" value={firstName} placeholder={'John'} onChange={(e) => setFirstName(e.target.value)} style={styles.inputFields} />
+                <div className='signUp-container'>
+                    <div className='signUp-formContainer' >
+                        <div className='signUp-inputLabel' >First Name</div>
+                        <input className='signUp-inputField' autoComplete={'off'} type="text" value={firstName} placeholder={'John'} onChange={(e) => setFirstName(e.target.value)}  />
                     </div>
-                    <div style={styles.formContainer}>
-                        <div style={styles.inputLabel}>Last Name</div>
-                        <input autoComplete={'off'} type="text" value={lastName} placeholder={'Doe'} onChange={(e) => setLastName(e.target.value)} style={styles.inputFields} />
-                    </div>
-                </div>
-                <div style={{ display: "flex", flexDirection: "row" }}>
-                    <div style={styles.formContainer}>
-                        <div style={styles.inputLabel}>Number</div>
-                        <input autoComplete={'off'} type="text" value={phoneNumber} placeholder={'US +1 9878976546'} onChange={(e) => setPhoneNumber(e.target.value)} style={styles.inputFields} />
-                    </div>
-                    <div style={styles.formContainer}>
-                        <div style={styles.inputLabel}>Email</div>
-                        <input autoComplete={'off'} type="text" value={email} placeholder={'johndoe@gmail.com'} onChange={(email) => setEmail(email.target.value)} style={styles.inputFields} onBlur={() => checkEmailValid()} />
-                        {emailValid === false && <div style={styles.invalidEmail}>Email is invalid</div>}
+                    <div className='signUp-formContainer' >
+                        <div className='signUp-inputLabel' >Last Name</div>
+                        <input className='signUp-inputField' autoComplete={'off'} type="text" value={lastName} placeholder={'Doe'} onChange={(e) => setLastName(e.target.value)}  />
                     </div>
                 </div>
-                <div style={{ display: "flex", flexDirection: "row" }}>
-                    <div style={styles.formContainer}>
-                        <div style={styles.inputLabel}>Password</div>
-                        <input autoComplete={'off'} type="text" value={password} placeholder={'Password'} onChange={(e) => setPassword(e.target.value)} style={styles.inputFields} onBlur={() => checkEmailValid()} />
+
+
+                <div className='signUp-container'>
+                    <div className='signUp-formContainer'>
+                        <div className='signUp-inputLabel'>Number</div>
+                        <input className='signUp-inputField' autoComplete={'off'} type="text" value={phoneNumber} placeholder={'US +1 9878976546'} onChange={(e) => setPhoneNumber(e.target.value)} />
                     </div>
-                    <div style={styles.formContainer}>
-                        <div style={styles.inputLabel}>Confirm Password</div>
-                        <input autoComplete={'off'} type="text" value={confirmPassword} placeholder={'Confirm Password'} onChange={(e) => setConfirmPassword(e.target.value)} style={styles.inputFields} onBlur={() => checkEmailValid()} />
-                        {emailValid === false && <div style={styles.invalidEmail}>Email is invalid</div>}
+                    <div className='signUp-formContainer'>
+                        <div className='signUp-inputLabel'>Email</div>
+                        <input className='signUp-inputField' autoComplete={'off'} type="text" value={email} placeholder={'johndoe@gmail.com'} onChange={(email) => setEmail(email.target.value)} onBlur={() => checkEmailValid()} />
+                        {emailValid === false && <div className='SignUp-emailValid'>Email is invalid</div>}
                     </div>
                 </div>
-                <FormGroup style={{ width: '100%', display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
-                    <FormControlLabel style={{ display: "flex" }} control={<Checkbox defaultChecked sx={{
+
+                <div className='signUp-container'>
+                    <div className='signUp-formContainer'>
+                        <div className='signUp-inputLabel'>Password</div>
+                        <input className='signUp-inputField' autoComplete={'off'} type="text" value={password} placeholder={'Password'} onChange={(e) => setPassword(e.target.value)}  onBlur={() => checkEmailValid()} />
+                    </div>
+                    <div className='signUp-formContainer'>
+                        <div className='signUp-inputLabel'>Confirm Password</div>
+                        <input className='signUp-inputField' autoComplete={'off'} type="text" value={confirmPassword} placeholder={'Confirm Password'} onChange={(e) => setConfirmPassword(e.target.value)} onBlur={() => checkEmailValid()} />
+                        {emailValid === false && <div className='SignUp-emailValid'>password is invalid</div>}
+                    </div>
+                </div>
+                <FormGroup className='SignUp-formGroup'>
+                    <FormControlLabel className='SignUp-FormControlLabel' control={<Checkbox defaultChecked sx={{
 
                         color: colors.primaryColor,
                         '&.Mui-checked': {
@@ -98,10 +97,10 @@ const SignUp = () => {
                         },
                     }} />} label={<Label />} />
                 </FormGroup>
-                <div style={styles.button}>
+                <div className='login-btn'>
                     Sign Up
                 </div>
-                <div style={{ marginTop: 10, alignSelf: 'center', flexDirection: 'row', display: 'flex', fontSize: 0.022 * innerHeight }}>Already a user? <Link to={'/login'} style={{ color: colors.primaryColor, textDecoration: 'underline', paddingLeft: 8, paddingRight: 8, textDecorationColor: colors.primaryColor, fontWeight: '500' }}> {'Login'} </Link></div>
+                <div className='signUp-login-section'>Already a user? <Link className='signUp-login-section-link' to={'/login'} style={{ color: colors.primaryColor}}> {'Login'} </Link></div>
             </div>
         </>
     )

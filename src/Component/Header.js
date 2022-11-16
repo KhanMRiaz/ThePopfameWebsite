@@ -15,6 +15,7 @@ import Dropdown from 'react-dropdown';
 import { useDispatch, useSelector } from 'react-redux'
 import { baseURL, service, success } from '../Redux/Actions/serviceAction'
 import axios from 'axios'
+import './Header.css'
 
 import "react-step-progress-bar/styles.css";
 import { ProgressBar, Step } from "react-step-progress-bar";
@@ -24,8 +25,6 @@ import { logout } from '../Redux/Actions/loginAction'
 const { innerHeight, innerWidth } = window
 
 const styles = {
-    fullWidthContainer: { zIndex: 9999, position: 'fixed', width: innerWidth, height: innerHeight * 0.10, alignItems: 'center', justifyContent: 'center', display: 'flex', backgroundColor: 'white' },
-    innerContainer: { width: innerWidth * 0.9, height: innerHeight * 0.10, alignItems: 'center', justifyContent: 'space-between', display: 'flex' },
     buttonsAndIconsContainer: { width: 0.4 * innerWidth, flexDirection: 'row', display: 'flex', alignItems: 'center', justifyContent: 'space-between' },
     buttonContainer: { borderRadius: 100, height: 0.05 * innerHeight, fontWeight: 'bold', alignItems: 'center', justifyContent: 'center', display: 'flex' },
     iconContainer: { height: 0.1 * innerHeight, justifyContent: 'center', display: 'flex', alignItems: 'center', cursor: 'pointer', right: '10vw', position: 'absolute' },
@@ -192,15 +191,15 @@ const RenderProfileDropdown = ({ dropdownOptions }) => {
         }
     }
     return (
-        <div style={styles.profileDropdownContainer}>
+        <div className='profileDropdownContainer'>
             {dropdownOptions && dropdownOptions.map(({ text, icon, navigateTo, separator }) =>
                 <Link to={navigateTo} style={{ textDecoration: 'none' }} onClick={() => text === 'Logout' && handleLogoutDispatch()}>
-                    {separator && <div style={{ borderTop: '1px solid #FFFFFF', width: 0.1 * innerWidth }} />}
-                    <div onMouseEnter={() => setHoverOn(text)}
-                        style={{ backgroundColor: hoverOn === text ? colors.secondaryColor : colors.primaryColor, height: 0.04 * innerHeight, alignItems: 'center', justifyContent: 'center', display: 'flex', marginTop: 0.01 * innerHeight, marginBottom: 0.01 * innerHeight, width: 0.12 * innerWidth }}>
-                        <div style={{ backgroundColor: hoverOn === text ? colors.secondaryColor : colors.primaryColor, height: 0.04 * innerHeight, alignItems: 'center', justifyContent: 'space-between', display: 'flex', marginTop: 0.01 * innerHeight, marginBottom: 0.01 * innerHeight, width: 0.07 * innerWidth }}>
-                            <IconTint src={icon} color={text === hoverOn ? colors.primaryColor : 'white'} style={{ height: 0.03 * innerHeight }} />
-                            <p style={{ color: text === hoverOn ? colors.primaryColor : 'white', textAlign: 'left', width: 0.045 * innerWidth, fontWeight: 'bold' }}>{text}</p>
+                    {separator && <div className='hr' />}
+                    <div className='Link-innerdiv' onMouseEnter={() => setHoverOn(text)}
+                        style={{ backgroundColor: hoverOn === text ? colors.secondaryColor : colors.primaryColor}}>
+                        <div className='Link-innerContainer' style={{ backgroundColor: hoverOn === text ? colors.secondaryColor : colors.primaryColor}}>
+                            <IconTint className='Icon-Link-innerContainer' src={icon} color={text === hoverOn ? colors.primaryColor : 'white'} />
+                            <p className='Text-Link-innerContainer' style={{ color: text === hoverOn ? colors.primaryColor : 'white'}}>{text}</p>
                         </div>
                     </div>
                 </Link>
@@ -212,10 +211,9 @@ const RenderProfileDropdown = ({ dropdownOptions }) => {
 const IconContainer = ({ imageSrc, hasDropDown, dropdownOptions }) => {
 	const [showDropDown, setShowDropDown] = useState(false)
 	return (
-		<div
-			style={styles.iconContainer}
+		<div className='iconContainer'
 			onMouseEnter={hasDropDown ? () => setShowDropDown(true) : null}
-			onMouseLeave={hasDropDown ? () => setShowDropDown(false) : null}>
+			onMouseLeave={hasDropDown ? () => setShowDropDown(false ) : null}>
 			<img src={imageSrc} alt='ddd' style={{height: 0.04 * innerHeight }} />
 			{showDropDown && <RenderProfileDropdown dropdownOptions={dropdownOptions} />}
 		</div>
@@ -296,7 +294,7 @@ const Header = (props) => {
 	useEffect(() => {
 		let getImage = () => {
 			const res = baseURL + '/api/request_images/' + profilePicture
-			setProfileImg(res)
+			// setProfileImg(res)
 		 }  
 		 getImage()
 	  }, [])
@@ -305,10 +303,10 @@ const Header = (props) => {
 		profileDropdownOptions[3].text = 'Logout'
 	}
 	return (
-		<div style={styles.fullWidthContainer}>
-			<div style={styles.innerContainer}>
-				<Link to={'/'}><img src={Logo} style={{ height: 0.08 * innerHeight }} /></Link>
-				<div style={styles.buttonsAndIconsContainer}>
+		<div className='fullWidthContainer'>
+			<div className='innerContainer'>
+				<Link to={'/'}><img src={Logo} className='imgLogo' alt='ddd'/></Link>
+				<div className='buttonsAndIconsContainer'>
 					{/* <ButtonContainer hasDropDown={true} width={0.2 * innerHeight} text={'Post a Job'} />
                     <ButtonContainer width={0.26 * innerHeight} text={'Become a Provider'} /> */}
 

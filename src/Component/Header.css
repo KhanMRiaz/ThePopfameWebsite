@@ -1,0 +1,87 @@
+.fullWidthContainer {
+    z-index: 9999;
+    position: fixed;
+    width: 100vw;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #fff;
+}
+.innerContainer{
+    width: 90vw;
+    height: 10vh;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+.imgLogo{
+    height: 10vh;
+    width: 4.5vw;
+}
+
+.buttonsAndIconsContainer{
+    width: 40vw;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.iconContainer{
+    height: 10vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    right: 10vw;
+    position: absolute;
+}
+
+.profileDropdownContainer{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 1vw;
+    background-color: rgb(135, 99, 80);
+    top: 9vh;
+    width: 13vw;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Link-innerdiv{
+    height: 4.5vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 12vw;
+}
+.Link-innerContainer{
+    height: 4.5vh;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 7vw;
+}
+
+.Icon-Link-innerContainer{
+    height: 3.5vh;
+
+}
+.Text-Link-innerContainer{
+text-align: left;
+width: 4vw;
+font-weight: bold;
+}
+.hr{
+    border-top: 1px solid rgb(255, 255, 255);
+    width: 12vw;
+    display: flex;
+}
+
